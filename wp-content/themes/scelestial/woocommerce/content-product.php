@@ -1,0 +1,74 @@
+<?php
+/**
+ * The template for displaying product content within loops
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates
+ * @version 3.6.0
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+global $product;
+
+// Ensure visibility.
+if ( empty( $product ) || ! $product->is_visible() ) {
+	return;
+}
+?>
+<li <?php wc_product_class( '', $product ); ?>>
+	<?php
+	/**
+	 * Hook: woocommerce_before_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_open - 10
+	 */
+	do_action( 'woocommerce_before_shop_loop_item' );
+ ?>
+
+
+		<div class="block4 card-product">
+					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
+					<div class="text-product">
+						<h5><?php the_title(); ?></h5>
+						<p><?php echo $product->get_price_html(); ?></p>
+						<div class="shop-btn">
+							<a href="<?php the_permalink(); ?>">
+								COMPRAR
+							</a>
+						</div>
+					</div>
+					<div class="block2-overlay trans-0-4">
+						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+							<i class="fa fa-heart" aria-hidden="true"></i>
+							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+						</a>
+
+						<div class="block2-btn-addcart trans-0-4">
+							<!-- Button -->
+							<button class="btn-oficial2">
+								<a href="<?php the_permalink(); ?>">VER MÁS</a>
+							</button>
+						</div>
+					</div>
+				</div>
+    		
+    	
+<?php
+	/**
+	 * Hook: woocommerce_after_shop_loop_item.
+	 *
+	 * @hooked woocommerce_template_loop_product_link_close - 5
+	 * @hooked woocommerce_template_loop_add_to_cart - 10
+	 */
+	do_action( 'woocommerce_after_shop_loop_item' );
+	?>
+</li>
