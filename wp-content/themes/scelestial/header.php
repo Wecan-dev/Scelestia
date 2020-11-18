@@ -72,15 +72,15 @@
 			<nav class="menu">
 				<ul class="main_menu">
 					<li>
-						<a href="<?php echo bloginfo('url')?>">Inicio</a>
+						<a href="<?php echo get_home_url() ?>">Inicio</a>
 						
 					</li>
 
 					<li>
-						<a href="lo-mas-vendido.html">Lo más vendido</a>
+						<a href="<?php echo get_home_url() ?>/lo-mas-vendido">Lo más vendido</a>
 					</li>
 
-					<li class="nav-item dropdown  ">
+					<!--<li class="nav-item dropdown  ">
 						<a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" >
 							Pijamas
 						</a>
@@ -122,21 +122,18 @@
 								</div>
 							</div>
 						</div>
-					</li>
-					<li>
-						<a href="#">Ropa interior</a>
-					</li>
-
-					<li>
-						<a href="#">Ropa Deportiva</a>
-					</li>
-					<li>
-						<a href="#">Accesorios</a>
-					</li>
+					</li>-->
+                        <?php $product_categories = get_categories( array( 'taxonomy' => 'product_cat', 'orderby' => 'menu_order', 'order' => 'asc' ));  ?>
+                        <?php foreach($product_categories as $category):  global $wpdb;?>
+                        <?php $result = $wpdb->get_results ("SELECT * FROM ".$wpdb->prefix."term_taxonomy where taxonomy = 'product_cat'");?>                              
+							<li>
+								<a href="<?php echo get_category_link( $category->term_id ); ?>"> <?=$category->name ?></a>
+							</li>
+                        <?php endforeach; ?>
 
 
 					<li>
-						<a href="<?php echo bloginfo('url').'/index.php/contacto';?>">Contacto</a>
+						<a href="<?php echo get_home_url() ?>/contacto">Contacto</a>
 					</li>
 
 					<li>
@@ -174,14 +171,18 @@
 			<div class="topbar2">
 
 				<!-- Logo2 -->
-				<a href="<?php echo bloginfo('url')?>" class="logo2">
+				<a href="<?php echo get_home_url() ?>/contacto" class="logo2">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="IMG-LOGO">
 				</a>
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						<i class="fa fa-user" aria-hidden="true"></i>
-						<i class="fa fa-heart-o" aria-hidden="true"></i>
+						<?php if (is_user_logged_in() == NULL){ ?>
+						   <a href="<?php echo get_home_url() ?>/inicio-sesion"><i class="fa fa-user" aria-hidden="true"></i></a>
+						<?php }else{ ?>  
+							<a href="<?php echo get_home_url() ?>/mi-cuenta"><i class="fa fa-user" aria-hidden="true"></i></a>
+						<?php } ?>  
+						<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i> <?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></a>
 							 <?php if( is_cart() && WC()->cart->cart_contents_count == 0){ $url_carro = get_permalink(wc_get_page_id('shop')); }else{ $url_carro = get_permalink(wc_get_page_id('cart')); } ?>
               <a href="<?php echo $url_carro; ?>" class="nav-link" style="padding:0;"><span class="fa fa-shopping-bag"></span><p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></a>
 					</span>
@@ -195,15 +196,15 @@
 					<nav class="menu">
 						<ul class="main_menu">
 							<li>
-								<a href="<?php echo bloginfo('url')?>">Inicio</a>
+								<a href="<?php echo get_home_url() ?>">Inicio</a>
 
 							</li>
 
 							<li>
-								<a href="lo-mas-vendido.html">Lo más vendido</a>
+								<a href="<?php echo get_home_url() ?>/lo-mas-vendido">Lo más vendido</a>
 							</li>
 
-							<li class="nav-item dropdown  ">
+							<!--<li class="nav-item dropdown  ">
 								<a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" >
 									Pijamas
 								</a>
@@ -245,22 +246,17 @@
 										</div>
 									</div>
 								</div>
+							</li> -->
+                        <?php $product_categories = get_categories( array( 'taxonomy' => 'product_cat', 'orderby' => 'menu_order', 'order' => 'asc' ));  ?>
+                        <?php foreach($product_categories as $category):  global $wpdb;?>
+                        <?php $result = $wpdb->get_results ("SELECT * FROM ".$wpdb->prefix."term_taxonomy where taxonomy = 'product_cat'");?>                              
+							<li>
+								<a href="<?php echo get_category_link( $category->term_id ); ?>"> <?=$category->name ?></a>
 							</li>
+                        <?php endforeach; ?> 
 
 							<li>
-								<a href="#">Ropa interior</a>
-							</li>
-
-							<li>
-								<a href="#">Ropa Deportiva</a>
-							</li>
-							<li>
-								<a href="#">Accesorios</a>
-							</li>
-
-
-							<li>
-								<a href="<?php echo bloginfo('url').'/index.php/contacto';?>">Contacto</a>
+								<a href="<?php echo get_home_url() ?>/contacto';?>">Contacto</a>
 							</li>
 
 							<li>
@@ -293,13 +289,19 @@
 					<!-- <a href="#" class="header-wrapicon1 dis-block">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 					</a> -->
+					<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i>0</a>
 
 					<span class="linedivide2"></span>
 
 					<div class="header-wrapicon2">
 						<span class="topbar-email">
-							<i class="fa fa-user" aria-hidden="true"></i>
-							<i class="fa fa-heart-o" aria-hidden="true"></i>
+						<?php if (is_user_logged_in() == NULL){ ?>
+						   <a href="<?php echo get_home_url() ?>/inicio-sesion"><i class="fa fa-user" aria-hidden="true"></i></a>
+						<?php }else{ ?>  
+							<a href="<?php echo get_home_url() ?>/mi-cuenta"><i class="fa fa-user" aria-hidden="true"></i></a>
+						<?php } ?> 							
+							
+							<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i> <?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></a>
 								 <?php if( is_cart() && WC()->cart->cart_contents_count == 0){ $url_carro = get_permalink(wc_get_page_id('shop')); }else{ $url_carro = get_permalink(wc_get_page_id('cart')); } ?>
               <a href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0;"><span class="fa fa-shopping-bag"></span><p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></a>
 						</span>
@@ -330,30 +332,23 @@
 
 
 					<li class="item-menu-mobile">
-						<a href="<?php echo bloginfo('url')?>">Inicio</a>
-						
-						
+						<a href="<?php echo get_home_url() ?>/">Inicio</a>				
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="lo-mas-vendido.html">Lo más vendido</a>
+						<a href="<?php echo get_home_url() ?>/lo-mas-vendido">Lo más vendido</a>
 					</li>
+		
+                        <?php $product_categories = get_categories( array( 'taxonomy' => 'product_cat', 'orderby' => 'menu_order', 'order' => 'asc' ));  ?>
+                        <?php foreach($product_categories as $category):  global $wpdb;?>
+                        <?php $result = $wpdb->get_results ("SELECT * FROM ".$wpdb->prefix."term_taxonomy where taxonomy = 'product_cat'");?>                              
+							<li class="item-menu-mobile">
+								<a href="<?php echo get_category_link( $category->term_id ); ?>"> <?=$category->name ?></a>
+							</li>
+                        <?php endforeach; ?> 
 
 					<li class="item-menu-mobile">
-						<a href="">Pijama</a>
-					</li>
-					<li class="item-menu-mobile">
-						<a href="">Ropa Interior</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="">Ropa Deportiva</a>
-					</li>
-					<li class="item-menu-mobile">
-						<a href="">Accesorios</a>
-					</li>
-					<li class="item-menu-mobile">
-						<a href="<?php echo bloginfo('url').'/index.php/contacto';?>">Contacto</a>
+						<a href="<?php echo get_home_url() ?>/contacto';?>">Contacto</a>
 					</li>
 
 				</ul>

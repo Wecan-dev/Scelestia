@@ -18,7 +18,7 @@
 						</div>
 					</div>
 					<div class="block2-overlay trans-0-4">
-						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+						<a href="?add_to_wishlist=<?php echo get_the_ID(); ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
 							<i class="fa fa-heart" aria-hidden="true"></i>
 							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
 						</a>

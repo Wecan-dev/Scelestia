@@ -140,7 +140,7 @@ do_action( 'woocommerce_sidebar' );?>
 					</div>
 				</div>
 				<div class="block2-overlay trans-0-4">
-					<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+					<a href="?add_to_wishlist=<?php echo get_the_ID(); ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
 						<i class="fa fa-heart" aria-hidden="true"></i>
 						<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
 					</a>
@@ -160,34 +160,7 @@ do_action( 'woocommerce_sidebar' );?>
 		</div>
 	</section>
 
-	<section style=" padding-top: 50px;" class="descubre ">
-		<div class="btn-oficial-des line-this">
-			<h6 style="color: #353636; font-weight: bold;" >
-				<a style="color:#353636; " href="#">Descubre más</a>
-			</h6>
-		</div>
-	</section>
-
-	<section class="asesora">
-		<div class="asesora-img">
-			<div class="div2">
-				<div class="div">
-					<div class="text-img">
-						<h6>PIJAMAS</h6>
-						<h3 style="margin-bottom: 15px;">Descubre<br>lo nuevo<br>
-						</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-						<div style="background: #a0d1af; border: none; margin-top: -2%;" class="btn-oficial2">
-							<a href="">
-								Ver ahora
-							</a>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-
-	</section>
+<?php  get_template_part('partials/colecciones/descubre-mas'); ?>
 
 <?php
 

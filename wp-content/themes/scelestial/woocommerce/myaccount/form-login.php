@@ -28,7 +28,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 	<div class="u-column1 col-1">
 
 <?php endif; ?>
-
+<?php if ($_GET["create"] != 'account') { ?>
 		<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 
 		<form class="woocommerce-form woocommerce-form-login login" method="post">
@@ -60,11 +60,11 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 
 		</form>
-
+<?php } ?>
 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
 	</div>
-
+<?php if ($_GET["create"] == 'account') { ?>
 	<div class="u-column2 col-2">
 
 		<h2><?php esc_html_e( 'Register', 'woocommerce' ); ?></h2>
@@ -112,7 +112,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 		</form>
 
 	</div>
-
+<?php } ?>
 </div>
 <?php endif; ?>
 
