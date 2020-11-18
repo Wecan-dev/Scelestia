@@ -180,7 +180,7 @@
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						<i class="fa fa-user" aria-hidden="true"></i>
+						<i class="fa fa-user-circle-o" aria-hidden="true"></i>
 						<i class="fa fa-heart-o" aria-hidden="true"></i>
 							 <?php if( is_cart() && WC()->cart->cart_contents_count == 0){ $url_carro = get_permalink(wc_get_page_id('shop')); }else{ $url_carro = get_permalink(wc_get_page_id('cart')); } ?>
               <a href="<?php echo $url_carro; ?>" class="nav-link" style="padding:0;"><span class="fa fa-shopping-bag"></span><p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></a>
@@ -298,7 +298,7 @@
 
 					<div class="header-wrapicon2">
 						<span class="topbar-email">
-							<i class="fa fa-user" aria-hidden="true"></i>
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
 							<i class="fa fa-heart-o" aria-hidden="true"></i>
 								 <?php if( is_cart() && WC()->cart->cart_contents_count == 0){ $url_carro = get_permalink(wc_get_page_id('shop')); }else{ $url_carro = get_permalink(wc_get_page_id('cart')); } ?>
               <a href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0;"><span class="fa fa-shopping-bag"></span><p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></a>

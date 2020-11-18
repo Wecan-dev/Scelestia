@@ -12,8 +12,8 @@
 
  		<div class="text1 about_info1">
  			<h6>ACERCA DE</h6>
- 			<h3>QUIENES
- 			SOMOS</h3>
+ 			<h3>Quienes
+ 			Somos</h3>
  			<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
  				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
  				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -71,7 +71,7 @@
  	<div class="father-flex">
  		<div style="border-right:2px solid #d5c4a8;" class=" father-icon">
  			<div class="img-icon">
- 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/fuel-truck.svg">		
+ 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/truck-1.png">		
  			</div>
 
  			<div class="img-text">
@@ -81,7 +81,7 @@
  		</div>
  		<div style="border-right:2px solid #d5c4a8;" class=" father-icon">
  			<div class="img-icon">
- 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/tarjeta.svg">		
+ 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/pay.png">		
  			</div>
 
  			<div class="img-text">
@@ -91,7 +91,7 @@
  		</div>
  		<div  class=" father-icon">
  			<div class="img-icon">
- 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/cel.svg">		
+ 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone.png">		
  			</div>
 
  			<div class="img-text">
@@ -126,7 +126,7 @@
  		<div class="card-team">
  			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/jefe3.png">
  			<div class="text-team">
- 				<h5>Maria Cabrera</h5>
+ 				<h5>María Cabrera</h5>
  				<p>Diseñadora</p>
  				
  			</div>
@@ -136,7 +136,7 @@
  			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/jefa.png">
  			<div class="text-team">
  				<h5>Margarita Osorio</h5>
- 				<p>Diseñadora de Vestuario</p>
+ 				<p>Diseñadora de vestuario</p>
 
  			</div>
  			

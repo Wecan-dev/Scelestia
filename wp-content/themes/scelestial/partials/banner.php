@@ -3,7 +3,7 @@
 			<div class="principal-img">
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png">
 				<div class="text-banner">
-					<h3>01/03</h3>
+					<h3>01/ <span style="font-size: 18px;">03</span></h3>
 					<h1>Pijamas <br> Colección Primaveral</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et.</p>

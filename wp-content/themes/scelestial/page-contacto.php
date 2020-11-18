@@ -12,12 +12,12 @@
  			<h5>Dejanos un mensaje</h5>
  			<div>
  				<form class="form2 ">
- 				<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 2, 'title' => false, 'description' => false ) ); ?>
+ 				<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 1, 'title' => false, 'description' => false ) ); ?>
  				</form>
  			</div>
  		</div>
  		<div class="information">
- 			<h5>Nuestra Información</h5>
+ 			<h5>Nuestra información</h5>
 
  			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
  				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -28,14 +28,14 @@
 
  			<div class="block-237 ">
  				<ul>
- 					<li>
- 						<i class="fa fa-envelope" aria-hidden="true"></i>
+ 						<li class="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/envelope.svg">
  						<div>
- 							<span style="color: #000; font-size: 16px; font-weight: 600;">Correo Electrónico</span> <br><span style="color: #000; font-size: 15px;">info@scelestial</span>
+ 							<span style="color: #000; font-size: 16px; font-weight: 600;">Correo electrónico</span> <br><span style="color: #000; font-size: 15px;">info@scelestial.com</span>
  							</div>
  						</li>
- 							<li >
- 								<i class="fa fa-phone" aria-hidden="true"></i>
+ 							<li class="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone-call (1).svg">
  								<div>
  								<span style="color: #000; font-size: 16px; font-weight: 600;"> Teléfono</span> <br>
  								<span style="color: #000; font-size: 15px;"> +57 797 599 577</span>

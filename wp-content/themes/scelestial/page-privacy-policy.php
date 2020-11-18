@@ -20,7 +20,7 @@ get_header(); ?>
 
 	<section class="colecciones ">
 		<h6>ACERCA DE</h6>
-		<h3 style="margin-bottom: 60px;">Políticas de Privacidad<br>
+		<h3 style="margin-bottom: 60px;">Políticas de privacidad<br>
 		</h3>
 
 
