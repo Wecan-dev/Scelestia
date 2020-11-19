@@ -40,7 +40,7 @@ do_action( 'woocommerce_before_main_content' );
                 <h3 style="color: black;
     padding: 30px;
     font-weight: bold;
-    margin-top: 1%;" class="title-text">Nuestros <span style="color: #f8615a;">Productos</span></h3> 
+    margin-top: 1%;" class="title-text"><?php echo get_queried_object()->name; ?></h3> 
             </div>        </div>         
     </div>
 			</div>
@@ -105,6 +105,63 @@ do_action( 'woocommerce_after_main_content' );
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action( 'woocommerce_sidebar' );
+do_action( 'woocommerce_sidebar' );?>
+
+	<section class="colecciones ">
+		<h6>ACERCA DE</h6>
+		<h3 style="margin-bottom: 60px;"><?php echo get_queried_object()->name; ?><br>
+		</h3>
+
+		<div class="multiple-items">
+			<?php 
+			$category_name = get_queried_object()->slug; 
+			$args = 
+			array(
+				'post_type' => 'product',      
+				'post_status' => 'publish',
+				'tax_query' => array(
+                'relation'=>'AND', // 'AND' 'OR' ...
+                array(
+      	          'taxonomy'        => 'product_cat',
+      	          'field'           => 'slug',
+      	          'terms'           => array($category_name),
+      	          'operator'        => 'IN',
+                )),
+            );	?>		
+			<?php $loop = new WP_Query( $args ); ?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); global $product;?>	
+			<div class="block4 card-product">
+				<img src="<?php the_post_thumbnail_url('full');?>">
+				<div class="text-product">
+					<h5><?php the_title() ?></h5>
+					<p><?php echo $product->get_price_html(); ?></p>
+					<div class="shop-btn">
+						<a href="<?php the_permalink(); ?>">
+							COMPRAR
+						</a>
+					</div>
+				</div>
+				<div class="block2-overlay trans-0-4">
+					<a href="?add_to_wishlist=<?php echo get_the_ID(); ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
+						<i class="fa fa-heart" aria-hidden="true"></i>
+						<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+					</a>
+
+					<div class="block2-btn-addcart trans-0-4">
+						<!-- Button -->
+						<button class="btn-oficial2">
+							<a href="<?php the_permalink(); ?>">VER MÁS</a>
+						</button>
+					</div>
+				</div>
+			</div>
+			
+			<?php endwhile; ?>
+
+		</div>
+	</section>
+
+
+<?php  get_template_part('partials/colecciones/descubre-mas');
 
 get_footer( 'shop' );

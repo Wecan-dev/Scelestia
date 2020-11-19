@@ -138,4 +138,17 @@ function sbuscador() {
 }
 add_action( 'widgets_init', 'sbuscador' );
 
+/***************Functions theme ********************/
 
+function theme_customize_register($wp_customize){
+
+  $wp_customize->add_panel('panel1',
+        array(
+            'title' => 'Colecciones',
+            'priority' => 1,
+            )
+        );
+  require_once trailingslashit( get_template_directory() ) . 'inc/home/customizer-descubre-mas.php';
+
+}
+add_action('customize_register','theme_customize_register');
