@@ -23,10 +23,13 @@
 define( 'DB_NAME', 'db_scelestia' );
 
 /** MySQL database username */
-define( 'DB_USER', 'adminwecan' );
+//define( 'DB_USER', 'adminwecan' );
+define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '_*8gTYWqM9FHU' );
+//( 'DB_PASSWORD', '_*8gTYWqM9FHU' );
+define( 'DB_PASSWORD', '' );
+
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
