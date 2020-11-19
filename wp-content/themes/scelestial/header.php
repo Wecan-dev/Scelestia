@@ -2,7 +2,7 @@
 <?php wp_head(); ?>
 <html lang="en">
 <head>
-	<title>Scelestial</title>
+	<title>Scelestia</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -55,11 +55,9 @@
 
 <body >
 	<div class="btn-whatsapp">
-
 		<a class="face" target="_blank" href="https://www.facebook.com/Fiorellabelleza"> <i  class="fa fa-facebook"></i></a>
 		<a class="insta" target="_blank" href="https://www.instagram.com/fiorella.vidaybelleza/">  <i class="fa fa-instagram"></i></a>
 	</div>
-
 	<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
