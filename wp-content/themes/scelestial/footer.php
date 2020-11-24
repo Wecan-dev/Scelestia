@@ -67,7 +67,7 @@
 				padding-top: 25px;
 				padding-bottom: 25px;
 				color: #fff!important;
-				font-weight: bold;">Copyright © 2020 Branch
+				font-weight: bold;">Copyright © 2020 <a style="color:#fff" href="https://www.branch.com.ar/" target="_blank">Branch</a>
 			</p>
 		</div>
 	</footer>

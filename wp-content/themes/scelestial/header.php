@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/fav.png"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/bootstrap/css/bootstrap.css">
 	<!--===============================================================================================-->
@@ -182,7 +184,7 @@
 						<?php } ?> 						
 						
 
-						<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></a>
+						<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i><p class="mini-cart"><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></p></a>
 							 <?php if( is_cart() && WC()->cart->cart_contents_count == 0){ $url_carro = get_permalink(wc_get_page_id('shop')); }else{ $url_carro = get_permalink(wc_get_page_id('cart')); } ?>
               <a href="<?php echo $url_carro; ?>" class="nav-link" style="padding:0;"><span class="fa fa-shopping-bag"></span><p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></a>
 					</span>
