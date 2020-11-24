@@ -151,7 +151,7 @@
 						<?php } ?> 						
 						
 
-						<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></a>
+						<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i><p class="mini-cart"><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></p></a>
 							 <?php if( is_cart() && WC()->cart->cart_contents_count == 0){ $url_carro = get_permalink(wc_get_page_id('shop')); }else{ $url_carro = get_permalink(wc_get_page_id('cart')); } ?>
               <a href="<?php echo $url_carro; ?>" class="nav-link" style="padding:0;"><span class="fa fa-shopping-bag"></span><p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></a>
 					</span>

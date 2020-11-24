@@ -31,7 +31,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php endif; ?>
 <?php if ($_GET["create"] != 'account') { ?>
-<section class="register">
+<section class="registro">
 	<div class="register_form container">
 
 			<div class="title_register">
@@ -68,7 +68,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			    </div>
 			    		
 				<div class="btn-green">
-				    <button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>">Resgítrarse</button>
+				    <button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>">Iniciar sesión</button>
 			    </div>
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 				
@@ -85,7 +85,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 	</div>
 <?php if ($_GET["create"] == 'account') { ?>
-<section class="register">
+<section class="register2">
 	<div class="register_form container">
 
 			<div class="title_register">
@@ -94,7 +94,6 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 				<h4><span style="color: #000; font-weight: bold;">Resgistro de</span> <br> Compradores</h4>
 			</div>
            <?php echo do_shortcode('[user_registration_form id="114"]');  ?>
-           <a href="?create="><p style="font-weight: bold; ">Iniciar Sesión <i style="color: #000" class="fa fa-angle-right" aria-hidden="true"></i></p></a>
 	</div>
 </section>	
 

@@ -1,7 +1,9 @@
 <?php 
 /****************** Styles *****************/
 function rosary_styles(){
-	wp_enqueue_style('icon', get_stylesheet_directory_uri() . '/assets/images/fav.png' ); 
+	wp_enqueue_style('icon', get_stylesheet_directory_uri() . '/assets/images/fav.png' );
+	wp_enqueue_style('gstatic', "https://fonts.gstatic.com" );
+	wp_enqueue_style('fonts.googleapis', "https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" );
 	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.css' );
 	wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style('icon-font', get_stylesheet_directory_uri() . '/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' );
