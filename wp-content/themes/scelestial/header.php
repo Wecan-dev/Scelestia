@@ -5,38 +5,10 @@
 	<title>Scelestia</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/fav.png"/>
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/bootstrap/css/bootstrap.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/animate/animate.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/css-hamburgers/hamburgers.min.css">
-	<!--===============================================================================================-->
-
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/slick/slick-theme.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/lightbox2/css/lightbox.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/util.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/media.css">
-	<!--===============================================================================================-->
 </head>
-
 <div class="elipse">
 	<img src="<?php echo get_template_directory_uri(); ?>/assets/images/fav.png" alt="">
 </div>
-
-
 <style>
 	.elipse{
 		background:#fff;
@@ -49,11 +21,8 @@
 		justify-content: center;
 		align-items: center;
 	}
-
 </style>
-
-
-<body >
+<body>
 	<div class="btn-whatsapp">
 		<a class="face" target="_blank" href="https://www.facebook.com/Fiorellabelleza"> <i  class="fa fa-facebook"></i></a>
 		<a class="insta" target="_blank" href="https://www.instagram.com/fiorella.vidaybelleza/">  <i class="fa fa-instagram"></i></a>
