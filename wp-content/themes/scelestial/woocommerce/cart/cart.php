@@ -146,7 +146,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<?php } ?>
 					<a href="<?php echo bloginfo('url').'/index.php/shop';?>"><button style="background: #a0d1af" type="submit" class="button"  value="<?php esc_attr_e( 'Seguir Comprando', 'woocommerce' ); ?>"><?php esc_html_e( 'Seguir Comprando', 'woocommerce' ); ?></button></a>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					<button type="submit" style="background:#f6beb1!important" class="button button-actualizar" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>

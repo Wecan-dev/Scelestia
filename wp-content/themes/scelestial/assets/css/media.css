@@ -3,6 +3,16 @@
 font-size: 30px;
 text-align: center;
 }
+	.modal {
+    width: 100%;
+    left: 0;
+    top: 130px;
+    position: fixed;
+}
+	
+	.close {
+    float: right;
+		font-size: 3rem;}
 
 .m-text1 p{
 text-align: center;
@@ -1035,6 +1045,16 @@ margin-left: 4%;
 
 font-size: 30px;
 }
+	
+	.wishlist_table.mobile li .item-wrapper {
+    display: flex;
+    /* width: calc(100% - 25px); */
+    vertical-align: top;
+    margin-bottom: 7px;
+    align-items: center;
+    justify-content: space-around;
+}
+
 
 ::placeholder{
 color: #000!important;
@@ -4693,7 +4713,7 @@ color: #a2d2b1!important;
 @media (min-width: 768px) and (max-width: 1366px) {
 .topbar-child2 {
 
-      right: 115px;
+      right: 150px;
 }
 	
 	.text-product {
@@ -4877,7 +4897,7 @@ i.fa.fa-search {
     left: 15px;
 }
 	
-	     .slick-next:focus, .slick-next {
+	     .slick-next {
     right: 15px;
 }
  
@@ -4909,19 +4929,20 @@ i.fa.fa-search {
 }
 
 .img-about3 {
-    position: absolute;
-    top: 46%;
-    left: 5%;
+     position: absolute;
+    top: 44%;
+    left: 6%;
+
 }
 
 .img-about4 {
     position: absolute;
-       bottom: -115%;
+       bottom: -103%;
 }
 
 .img-about5 {
   position: absolute;
-    bottom: -203%;
+    bottom: -185%;
     left: 8%;
     }
 
