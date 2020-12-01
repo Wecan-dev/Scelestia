@@ -14,25 +14,15 @@
  			<h6>ACERCA DE</h6>
  			<h3>Quienes
  			Somos</h3>
- 			<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
- 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
- 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
- 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
- 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
- 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+ 			<P>Somos una marca de ropa interior femenina, fundada en el año 2006, en la ciudad de medellin - Colombia. Nos caracterizamos por elaborar prendas de buena calidad, buen gusto y con detalles romanticos . Nos dirigimos a todas aquellas mujeres que les gusta sentirse bien en todos los momentos del dia, aquellas mujeres que aunque esten en su casa , les importa estar bien vestidas y cómodas.</P>
  		</div>
  	</div>
  	<div class="text1-img bck">
 
  		<div class="text1 about_info1">
  			<h6>ACERCA DE</h6>
- 			<h3>Lorem ipsum</h3>
- 			<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
- 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
- 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
- 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
- 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
- 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+ 			<h3>NUESTROS MATERIALES</h3>
+ 			<P> ¡NOS ENCANTA APOYAR NUESTRA INDUSTRIA!, por esto, nuestros materiales son 100% colombianos y nuestra mano de obra es contratada localmente. Seleccionamos con alto rigor nuestros proveedores para tener los insumos de la mejor calidad . Somos una empresa con alta experiencia en el sector textil y un alto conocimiento en tendencias, materiales e insumos.</P>
  		</div>
  		<div class="img-about2">
  			<div class="rose1">
@@ -55,19 +45,14 @@
 
  		<div class="text1 about_info1">
  			<h6>ACERCA DE</h6>
- 			<h3>Lorem ipsum</h3>
- 			<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
- 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
- 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
- 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
- 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
- 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+ 			<h3>NUESTROS PRODUCTOS</h3>
+ 			<P>Nuetra marca esta divida en 3 segmentos: linea infantil, linea juvenil y linea dama, abarcando de esta forma la mayoria de las edades de nuestras mujeres. También contamos con la linea  deportiva, en donde queremos ofrecer a nuestras usuarias prendas cómodas  para hacer deporte combinadas con diseños modernos y vanguardistas.</P>
  		</div>
  	</div>
  </section>
 
  <section class="reasons  bck">
- 	<h6>Razones para que compres con nosotros</h6>
+ 	<h6>RAZONES PARA QUE COMPRES CON NOSOTROS</h6>
  	<div class="father-flex">
  		<div style="border-right:2px solid #d5c4a8;" class=" father-icon">
  			<div class="img-icon">
@@ -75,8 +60,7 @@
  			</div>
 
  			<div class="img-text">
- 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
- 				tempor incididunt ut labore et dolore magna aliqua.</p>
+ 				<p>Llegamos a todo Colombia, ¡HASTA LA PUERTA DE TU CASA!</p>
  			</div>
  		</div>
  		<div style="border-right:2px solid #d5c4a8;" class=" father-icon">
@@ -85,8 +69,7 @@
  			</div>
 
  			<div class="img-text">
- 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
- 				tempor incididunt ut labore et dolore magna aliqua.</p>
+ 				<p>Múltiples medios de pago.</p>
  			</div>
  		</div>
  		<div  class=" father-icon">
@@ -95,8 +78,7 @@
  			</div>
 
  			<div class="img-text">
- 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
- 				tempor incididunt ut labore et dolore magna aliqua.</p>
+ 				<p>¡Solucionamos tus dudas y estamos dispuesto a ayudarte! comunícate con nosotros al whatsapp 314 887 97 52</p>
  			</div>
  		</div>
  	</div>

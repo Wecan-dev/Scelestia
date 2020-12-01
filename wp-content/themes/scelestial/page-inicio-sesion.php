@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 	<div class="register_form container">
 
 			<div class="title_register">
-				<i class="fa fa-user" style="color:#a0d1af; margin-bottom: 10%;" aria-hidden="true"></i>
+				<i class="fa fa-user-circle-o" style="color:#a0d1af; margin-bottom: 10%;" aria-hidden="true"></i>
 
 				<h4><span style="color: #000; font-weight: bold;">Iniciar Sesión</span> <br> Compradores</h4>
 			</div>	
@@ -89,11 +89,13 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 	<div class="register_form container">
 
 			<div class="title_register">
-				<i class="fa fa-user" style="color:#a0d1af; margin-bottom: 10%;" aria-hidden="true"></i>
+				<i class="fa fa-user-circle-o" style="color:#a0d1af; margin-bottom: 10%;" aria-hidden="true"></i>
 
-				<h4><span style="color: #000; font-weight: bold;">Resgistro de</span> <br> Compradores</h4>
+				<h4><span style="color: #000; font-weight: bold;">Registro de</span> <br> Compradores</h4>
 			</div>
            <?php echo do_shortcode('[user_registration_form id="114"]');  ?>
+		
+			<p style="font-weight: bold; ">De regreso a iniciar sesión <i style="color: #000" class="fa fa-angle-right" aria-hidden="true"></i></p>
 	</div>
 </section>	
 

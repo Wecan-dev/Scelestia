@@ -3,12 +3,12 @@
 		<div class="div3"></div>
 		<div class="text-img">
 			<h6>ASESORAS</h6>
-			<h3 style="margin-bottom: 31px;">Quieres ser asesora <br>
+			<h3 style="margin-bottom: 31px;">¿Quieres ser Asesora?<br>
 			</h3>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+			<p>Puedes vender nuestros productos y crear ingresos adicionales.</p>
 			<div class="btn-oficial2">
 				<a href="">
-					Regístrate como vendedora
+					Regístrate como Asesora
 				</a>
 			</div>
 		</div>

@@ -1400,9 +1400,6 @@ width: auto;
 width:100%;
 }
 
-.card-product {
-align-items: baseline;
-}
 
 .comoda h3{
 font-size: 35px;
@@ -2970,10 +2967,6 @@ width: auto;
 width:100%;
 }
 
-.card-product {
-align-items: baseline;
-}
-
 .comoda h3{
 font-size: 35px;
 color: #fff;
@@ -4534,10 +4527,6 @@ width: auto;
 width:100%;
 }
 
-.card-product {
-align-items: baseline;
-}
-
 .comoda h3{
 font-size: 35px;
 color: #fff;
@@ -4709,11 +4698,24 @@ color: #a2d2b1!important;
 }
 
 }
+	
+	
+	@media (min-width: 900px) and (max-width: 1024px) {
+		.slick-next {
+    right: -12px;
+}
+		.slick-prev:hover, .slick-prev:focus, .slick-prev {
+    left: -12px;
+}
+
+	}
+	
+	
 
 @media (min-width: 768px) and (max-width: 1366px) {
 .topbar-child2 {
 
-      right: 150px;
+      right: 47px;
 }
 	
 	.text-product {

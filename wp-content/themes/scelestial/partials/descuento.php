@@ -12,9 +12,9 @@
 			<div class="div">
 				<div class="text-img">
 					<h6>PIJAMAS</h6>
-					<h3 style="margin-bottom: 15px;">50% de<br> descuento<br>
+					<h3 style="margin-bottom: 15px;">Después de la tormenta <br> siempre viene la CALMA!<br>
 					</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					<p>En medio del caos del mundo, vale la pena encontrar esos espacios que te den TRANQUILIDAD..... Scelestia lanza su coleccion CALMA, brindandote prendas que te permitan disfrutar en tu casa de estos momentos , haciendote sentir relajada y en Paz.</p>
 				</div>	
 			</div>
 		</div>

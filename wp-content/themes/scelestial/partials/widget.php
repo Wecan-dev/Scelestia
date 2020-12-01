@@ -1,8 +1,7 @@
-
 <section class="instagram ">
 	<div class="sec-title res-sec p-b-20 p-l-15 p-r-15">
 		<h3 class="products-text t-center">
-			@scelestial
+			@scelestia
 		</h3>
 	</div>
 
