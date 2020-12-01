@@ -174,7 +174,7 @@ font-weight: 300;
 .slick-dots li button:before
 {
     font-family: 'slick';
-    font-size: 10px;
+    font-size: 8px;
     line-height: 20px;
 
     position: absolute;
@@ -199,5 +199,3 @@ font-weight: 300;
     color: #000;
     font-weight: bold;
 }
-
-

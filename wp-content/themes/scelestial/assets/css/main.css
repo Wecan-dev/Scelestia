@@ -411,7 +411,7 @@ position: absolute;
     padding-right: 38px;
     align-items: end;
     justify-content: space-around;
-    width: 20%;
+    width: 24%;
     z-index: 99;
 }
 
@@ -2535,9 +2535,16 @@ border: 2px solid#a0d1af!important;
 font-size: 15px;
 }
 form h3{
-display: none!important;
 color: #fff;
 }
+
+.wishlist_table.mobile li .item-wrapper .item-details {
+    display: initial;
+    width: auto;
+	vertical-align: middle;}
+.wishlist_table.mobile li .item-wrapper .product-thumbnail {
+    display: inline-block;
+	max-width: fit-content;}
 
 form.checkout.woocommerce-checkout.container {
 padding-top: 100px;
@@ -2894,13 +2901,15 @@ width: auto!important;
 
 .woocommerce a.remove {
 display: flex !important;
-width: 100%!important;
 color: #000!important;
 background: #a0d1af;
 justify-content: center;
 border-radius: 5px;
+	font-weight:300;
 }
-
+.ur-frontend-form .ur-button-container{
+	padding:0!important;
+}
 
 .actions button.button{
 
@@ -2968,6 +2977,8 @@ border-bottom: 1px solid transparent;
 .woocommerce table.shop_table th {
 font-family: 'Poppins',sans-serif!important;
 text-align: center;
+	font-weight: bold;
+    color: #000;
 }
 
 .content-area{background: #fff;}    
@@ -3759,7 +3770,7 @@ text-align: center;
 
 .text-img p{
 width: 472px;
-height: 130px;
+height: 85px;
 font-family: Poppins, sans-serif;
 font-size: 18px;
 font-weight: normal;
@@ -4582,9 +4593,22 @@ text-decoration: underline;
 
 .div2{
 border: 1px solid #9cccab;
-padding: 15px;
-height: 50vh;
-width: 75%;
+    padding: 15px;
+    height: 60vh;
+    width: 75%;
+}
+
+.div2 h3{
+	font-size: 35px;
+    line-height: 1.2!important;
+}
+
+.div2 p{
+	height:180px;
+}
+
+.fixed-header2 input{
+	width:225px!important;
 }
 
 .descubre{
@@ -4622,7 +4646,7 @@ background-size: cover;
 .nav-img img {
 width: 320px;
 height: 275px;
-object-fit: contain;
+object-fit: cover;
 }
 
 
@@ -4684,7 +4708,7 @@ position: relative;
 
 .text-banner p{
 width: 54%;
-margin-top: 4%;
+margin-top: 10%;
 }
 
 .text-prev{
@@ -4727,7 +4751,8 @@ line-height: 1.3;
 }
 
 .text-prev h3 {
-font-size: 35px;
+    font-size: 20px;
+    margin-top: 5px;
 font-family: 'Bodoni SvtyTwo ITC TT';
 }
 
@@ -4989,6 +5014,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+	border-radius:5px;
 }
 
 .radio {
@@ -5013,7 +5039,7 @@ background: transparent;
 border: 1px solid #fff;
 width: 100%;
 height: 40px;
-border-radius: 3px;
+border-radius: 5px!important;
 border: solid 2px #dddddd;
 margin-bottom: 3%;
 padding: 10px 20px;
@@ -5033,6 +5059,7 @@ font-weight: bold;
 margin-top: 2%;
 margin-bottom: 2%;
 	width:100%;
+	border-radius:5px;
 }
 
 .btn-green a{
@@ -5086,7 +5113,7 @@ z-index: -1;
 .img-about{
     position: absolute;
     top: 43%;
-    left: 5%;
+    left: 0%;
 }
 
 .img-hoja {
@@ -5183,7 +5210,7 @@ left: -45%;
 
 .comoda h3{
 	font-family: 'Bodoni SvtyTwo ITC TT';
-font-size: 59px;
+font-size: 45px;
 font-weight: bold;
 font-stretch: normal;
 font-style: normal;
@@ -5828,7 +5855,7 @@ i.fa.fa-user-circle-o {
     padding: 3px;
 }
 i.fa.fa-user-circle-o {
-    color: #265c46!important;
+       color: #a0d1af!important;
 }
 
 button.woocommerce-button.button.woocommerce-form-login__submit {
@@ -6027,7 +6054,7 @@ i.yith-wcwl-icon.fa.fa-heart-o {
 }
 
 .colecciones h5{
-	    text-align: center;
+	    text-align: inherit;
     margin-top: 2%;
     font-size: 20px;
 }
@@ -6207,4 +6234,167 @@ width: 48%;
 }
 .button-home {
     margin-bottom: 5%;
+}
+
+.wishlist_table tr td.product-thumbnail a {
+    display: block;
+    border: none;
+    width: 100px;
+}
+
+.wishlist_table tr td.product-thumbnail a img {
+    width: 150px!important;
+	height: 150px!important;}
+.woocommerce img, .woocommerce-page img {
+    height: auto;
+    max-width: fit-content;
+}
+.wish{
+	width:75%;
+}
+
+.wishlist-title.wishlist-title-with-form h2{
+	display:none;
+}
+
+.table-image 
+  thead 
+    td,
+th {
+      border: 0;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  
+
+  td,
+  th {
+    vertical-align: middle;
+    text-align: center;
+}
+    .qty {
+      max-width: 2rem;
+    }
+
+.price {
+  margin-left: 1rem;
+}
+
+.modal-footer {
+  padding-top: 0rem;
+}
+
+.modal {
+     width: 21%;
+    left: 79%;
+    top: 130px;
+    position: fixed;
+}
+
+.flex-cart {
+    display: flex;
+	justify-content: space-between;
+}
+
+.img-cart img{
+	    width: 110px;
+}
+.modal-footer.border-top-0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.btn-greeno {
+background: #9bcbaa;
+padding: 10px 20px;
+color: #fff;
+font-weight: bold;
+	width:100%;
+}
+
+.btn-greeno a{
+	color:#fff!important;
+}
+
+.btn-greeno:hover{
+	color:#000!important;
+}
+.modal-footer{
+	padding:0;
+}
+
+.total-cart {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px;
+}
+
+.modal-backdrop {
+    background-color: rgb(25 24 24 / 83%);
+}
+
+footer i.fa.fa-envelope-o {
+    font-size: 20px;
+    color: #fff!important;
+}
+/*boton deseos*/
+.yith-wcwl-add-button {
+    position: absolute!important;
+    top: 0!important;
+    right: 5%!important;
+}
+.summary.entry-summary {
+    position: relative!important;
+}
+/**/
+button.single_add_to_cart_button.button.alt.disabled.wc-variation-selection-needed {
+    border-radius: 5px!important;
+}
+button.plus.qib-button {
+    border-radius: 0 5px 5px 0!important;
+}
+button.minus.qib-button {
+    border-radius: 5px 0 0 5px!important;
+}
+/*resert variations*/
+a.reset_variations {
+    display: none!important;
+}
+
+#variation_pa_color label{
+	font-weight:bold;
+}
+#variation_pa_tallas label {
+    font-weight: bold;
+    margin-bottom: 20%;
+}
+
+#varitation_pa_tallas{
+	display: flex!important;
+    flex-direction: column!important;
+}
+
+div#variation_pa_tallas{
+	display: flex!important;
+    flex-direction: column!important;
+}
+.variations .variation a.reset_variations{
+    display: none!important;
+}
+
+.variations .value{
+	margin-left:0!important;
+}
+
+.summary.entry-summary .price{
+	margin-left:0!important;
+}
+
+.img-about img{
+	width: 100%;
+    height: 450px;
+    object-fit: contain;
 }

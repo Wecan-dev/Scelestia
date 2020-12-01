@@ -91,7 +91,7 @@ if ( post_password_required() ) {
 			</h3>
 				<?php $args = array( 'post_type' => 'product', 'posts_per_page' => 6 ); ?>
 	      				<?php $loop = new WP_Query( $args ); ?>
-			<div class="multiple-items">
+			<div class="multiple-items2">
 				<?php while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 				<div class="block4 card-product">
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">

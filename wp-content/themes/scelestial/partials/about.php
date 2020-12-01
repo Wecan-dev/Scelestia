@@ -1,4 +1,3 @@
-
 	<section id="about" class="container about">
 		<div class="about_flex">
 			<div class="about_info">
@@ -9,7 +8,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/back-about.png">
 				</div>
 				<div class="img-about">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/about2.png">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.jpg">
 				</div>
 				<div class="img-hoja">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/about.png">
@@ -17,9 +16,8 @@
 
 			</div>
 			<div class="about_text">
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>
-					Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-					Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br> </p>
+				<p>SCELESTIA es una marca de ropa interior femenina dirigida a mujeres que quieren sentirse cómodas, vistiendo prendas de buen gusto que muestren su feminidad y las hagan sentir bellas. Nos preocupamos por lograr ajustes perfectos que realcen las siluetas de nuestras usuarias, brindando prendas suaves y delicadas.<br><br>
+					Scelestia es para todas aquellas muejeres que piensan que es importante verse igual de bien por dentro que por fuera!.<br> </p>
 
 					<div class="btn-oficial">
 						<a href="<?php echo bloginfo('url').'/index.php/nosotros';?>">

@@ -16,7 +16,12 @@
  */
 
 get_header(); ?>
-
-	<?php echo do_shortcode('[yith_wcwl_wishlist]'); ?>
+<section class="colecciones">
+      <h6>ACERCA DE</h6>
+      <h3 style="margin-bottom:5%;">Lista de deseos      </h3>
+	<div class="container wish">
+		 <?php echo do_shortcode('[yith_wcwl_wishlist]'); ?> 
+	</div>
+</section>
 
 <?php get_footer();?>
