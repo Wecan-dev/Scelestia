@@ -15,6 +15,7 @@
     'description' => 'Clic <a href="edit.php?post_type=itemsbanner">aquì</a> par agregar items',
     'section' => 'banner',
     'settings' => 'banner_message',
+    'type' => 'hidden',
   )));
 
   

@@ -38,11 +38,12 @@ function theme_customize_register($wp_customize){
 
 	$wp_customize->add_panel('panel1',
 		array(
-			'title' => 'Banner',
+			'title' => 'Home',
 			'priority' => 1,
 		)
 	);
 	require_once trailingslashit( get_template_directory() ) . 'inc/home/customizer-banner.php';
+	require_once trailingslashit( get_template_directory() ) . 'inc/home/customizer-comoda.php';
 
 	$wp_customize->add_panel('panel4',
 		array(
