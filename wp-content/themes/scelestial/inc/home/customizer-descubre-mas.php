@@ -3,7 +3,7 @@
   
   $wp_customize->add_section('descubre-mas', array (
     'title' => 'Descubre más',
-    'panel' => 'panel1'
+    'panel' => 'panel4'
   ));
   
 

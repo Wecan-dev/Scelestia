@@ -164,7 +164,20 @@ function author_name($id_author)
     { 
       return $valor=$page->user_nicename;
     } 
-}   
+}
+
+/************** Count post banner ****************/
+function cont_items_banner($post_id)
+{
+    global $wpdb;
+    $count = 0;
+
+      $result1 = $wpdb->get_results ("SELECT * FROM ".$wpdb->prefix."posts where post_type = 'itemsbanner' and post_status = 'publish'");
+      foreach ( $result1 as $page1 )
+      { $count = $count+1;}
+      
+    return $count;
+}  
 
 /************** Count post cat ****************/
 function count_post($cat_id)

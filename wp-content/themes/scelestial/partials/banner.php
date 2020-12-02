@@ -1,93 +1,40 @@
 	<section class="banner">
 		<div class="slider-for">
+			<?php $a = 1;       
+			$args = array (
+				'post_type' => 'itemsbanner',
+				'post_status' => 'publish',
+			);?>
+			<?php $loop = new WP_Query( $args ); ?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); global $product;?> 			
 			<div class="principal-img">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner1.jpg">
+				<img src="<?php the_field('image-items-banner') ?>">
 				<div class="text-banner">
-					<h3>01/<span style="font-size: 20px;">05</span></h3>
-					<h1>CONFORT Y ESTILO</h1>
-					<p>¡Disfruta de tus momentos de descanso sintiéndote bella!</p>
+					<h3>0<?php echo $a ?>/<span style="font-size: 20px;">0<?php echo cont_items_banner($post_id);  ?></span></h3>
+					<h1><?php the_field('title-items-banner') ?></h1>
+					<p><?php the_field('subtitle-items-banner') ?></p>
 				</div>
 			</div>
-			<div class="principal-img">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/2.jpg">
-				<div class="text-banner">
-					<h3>02 <span style="font-size: 20px;">/05</span></h3>
-					<h1>CONFORT Y ESTILO</h1>
-					<p>¡Disfruta de tus momentos de descanso sintiendote bella!</p>
-				</div>
-			</div>
-			<div class="principal-img">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/3.jpg">
-				<div class="text-banner">
-					<h3>03 <span style="font-size: 20px;">/05</span></h3>
-					<h1>CONFORT Y ESTILO</h1>
-					<p>¡Disfruta de tus momentos de descanso sintiendote bella!</p>
-				</div>
-			</div>
-				<div class="principal-img">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/f.jpg">
-				<div class="text-banner">
-					<h3>04 <span style="font-size: 20px;">/05</span></h3>
-					<h1>CONFORT Y ESTILO</h1>
-					<p>¡Disfruta de tus momentos de descanso sintiendote bella!</p>
-				</div>
-			</div>
-						<div class="principal-img">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/5.jpg">
-				<div class="text-banner">
-					<h3>05 <span style="font-size: 20px;">/05</span></h3>
-					<h1>CONFORT Y ESTILO</h1>
-					<p>¡Disfruta de tus momentos de descanso sintiendote bella!</p>
-				</div>
-			</div>
+			<?php $a = $a + 1; endwhile; ?> 
 		</div>
 
 		<div class="slider-nav">
+			<?php $b = 1;         
+			$args = array (
+				'post_type' => 'itemsbanner',
+				'post_status' => 'publish',
+			);?>
+			<?php $loop = new WP_Query( $args ); ?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); global $product;?> 			
 			<div class="item-prev">
 				<div class="nav-img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner2.jpg">
+					<img src="<?php the_field('image-items-prev-banner') ?>">
 				</div>
 				<div class="text-prev">
-					<h4>01</h4>
-					<h3>CONFORT Y ESTILO</h3>
+					<h4>0<?php echo $b ?></h4>
+					<h3><?php the_field('title-items-prev-banner') ?></h3>
 				</div>
 			</div>
-			<div class="item-prev">
-				<div class="nav-img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner3.jpg">
-				</div>
-				<div class="text-prev">
-					<h4>02</h4>
-					<h3>CONFORT Y ESTILO</h3>
-				</div>
-			</div>
-			<div class="item-prev">
-				<div class="nav-img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner4.jpg">
-				</div>
-				<div class="text-prev">
-					<h4>03</h4>
-				<h3>CONFORT Y ESTILO</h3>
-				</div>
-			</div>
-					<div class="item-prev">
-				<div class="nav-img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner5.jpg">
-				</div>
-				<div class="text-prev">
-					<h4>04</h4>
-				<h3>CONFORT Y ESTILO</h3>
-				</div>
-			</div>
-	
-								<div class="item-prev">
-				<div class="nav-img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/dot5.jpg">
-				</div>
-				<div class="text-prev">
-					<h4>05</h4>
-				<h3>CONFORT Y ESTILO</h3>
-				</div>
-			</div>
+			<?php $b = $b + 1; endwhile; ?> 
 		</div>
 	</section>
