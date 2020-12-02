@@ -44,6 +44,7 @@ function theme_customize_register($wp_customize){
 	);
 	require_once trailingslashit( get_template_directory() ) . 'inc/home/customizer-banner.php';
 	require_once trailingslashit( get_template_directory() ) . 'inc/home/customizer-comoda.php';
+	require_once trailingslashit( get_template_directory() ) . 'inc/home/customizer-colecciones.php';
 
 	$wp_customize->add_panel('panel4',
 		array(
