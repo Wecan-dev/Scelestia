@@ -17,8 +17,27 @@
  * @version 3.7.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit; ?>
+	<div class="blog-page" style="background-color: #fff!important; ">
 
+		<div class="header "  style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/contacto.png);">
+			<div class="mask-blog">
+				<h3 style="font-weight: bold; color: #000; text-align: center; font-size:59px; font-family: 'Bodoni SvtyTwo ITC TT';">Detalles de <br> las ordenes</h3>
+			</div>
+		</div>
+
+		<section class="historial">
+			<div class="historial-flex">
+				<div class="button-home">
+					<button class="back-home">
+						<a href="">Regresar</a>
+					</button>
+				</div>
+				<div class="other-home">
+					<a class="a_factura" style="color: #ddd;" href="">Inicio</a>	 / <a style="color:#a0d1af" class="a_factura" href="">Historial de Ordenes</a>
+				</div>
+			</div>
+<?php
 do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 
 <?php if ( $has_orders ) : ?>
@@ -103,3 +122,6 @@ do_action( 'woocommerce_before_account_orders', $has_orders ); ?>
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_account_orders', $has_orders ); ?>
+
+</section>
+</div>

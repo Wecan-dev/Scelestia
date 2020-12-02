@@ -21,61 +21,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$allowed_html = array(
-	'a' => array(
-		'href' => array(),
-	),
-);
+
 ?>
 
-<p>
-	<?php
-	printf(
-		/* translators: 1: user display name 2: logout url */
-		wp_kses( __( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'woocommerce' ), $allowed_html ),
-		'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
-		esc_url( wc_logout_url() )
-	);
-	?>
-</p>
 
-<p>
-	<?php
-	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
-	$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">billing address</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
-	if ( wc_shipping_enabled() ) {
-		/* translators: 1: Orders URL 2: Addresses URL 3: Account URL. */
-		$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">shipping and billing addresses</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
-	}
-	printf(
-		wp_kses( $dashboard_desc, $allowed_html ),
-		esc_url( wc_get_endpoint_url( 'orders' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-address' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-account' ) )
-	);
-	?>
-</p>
+		
 
-<?php
-	/**
-	 * My Account dashboard.
-	 *
-	 * @since 2.6.0
-	 */
-	do_action( 'woocommerce_account_dashboard' );
+   <section class="colecciones">
+      <h6>ACERCA DE</h6>
+      <h3>Mi perfil<br>
+      </h3>
+      <h5> <center>compradores</center></h5>
 
-	/**
-	 * Deprecated woocommerce_before_my_account action.
-	 *
-	 * @deprecated 2.6.0
-	 */
-	do_action( 'woocommerce_before_my_account' );
+      <div class="container sec-option">
+      	<a href="<?php echo bloginfo('url')?>/mi-cuenta/edit-account">
+      	  <div class="profile">
+      		 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tarjeta.svg">
+      		 <p>Mi información</p>
+      	  </div>
+        </a>
+        <a href="<?php echo bloginfo('url')?>/mi-cuenta/orders">
+      	  <div class="profile">
+      		 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tarjeta.svg">
+      		 <p>Historial de Ordenes</p>
+      	  </div>
+      	</a>
+      	<a href="<?php echo wc_logout_url(); ?>">  
+      	   <div class="profile">
+      		  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tarjeta.svg">
+      		  <p>Cerrar Sesión</p>
+      	   </div>
+      	</a>   
+      </div>
+</section>
+	</div>
 
-	/**
-	 * Deprecated woocommerce_after_my_account action.
-	 *
-	 * @deprecated 2.6.0
-	 */
-	do_action( 'woocommerce_after_my_account' );
+<?php	
 
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
