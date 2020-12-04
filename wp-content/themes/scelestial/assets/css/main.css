@@ -6398,3 +6398,11 @@ div#variation_pa_tallas{
     height: 450px;
     object-fit: contain;
 }
+.icon-heart{position: absolute;
+    top: 3%;
+    /* left: 5%; */
+    right: 5%;}   
+
+.icon-heart .fa{
+    color: pink;
+}
