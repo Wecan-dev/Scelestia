@@ -7,11 +7,31 @@
 
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/scelestia.png">
 							</div>
-							<p>Scelestia es para todas aquellas muejeres que piensan que es importante verse igual de bien por dentro que por fuera!</p>
+							<p><?php echo get_theme_mod('description_contact'); ?></p>
 							<div class="ftco-footer-social list-unstyled ">
-								<li class="ftco-animate"><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-								<li class="ftco-animate"><a href="#"></a><i class="fa fa-facebook" aria-hidden="true"></i></li>
-								<li class="ftco-animate"><a href="#"></a><i class="fa fa-instagram" aria-hidden="true"></i></li>
+
+								<?php if (get_theme_mod('pinterest')!=NULL) {?>  
+									<li class="ftco-animate"><a target="_blank" href="<?php echo get_theme_mod('pinterest'); ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>          
+								<?php } ?>
+								<?php if (get_theme_mod('vimeo')!=NULL) {?> 
+									<li class="ftco-animate"><a target="_blank" href="<?php echo get_theme_mod('vimeo'); ?>"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+								<?php } ?>                
+								<?php if (get_theme_mod('youtube')!=NULL) {?>
+									<li class="ftco-animate"><a target="_blank" href="<?php echo get_theme_mod('youtube'); ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+								<?php } ?>
+								<?php if (get_theme_mod('facebook')!=NULL) {?>
+									<li class="ftco-animate"><a target="_blank" href="<?php echo get_theme_mod('facebook'); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<?php } ?>
+								<?php if (get_theme_mod('instagram')!=NULL) {?>
+									<li class="ftco-animate"><a target="_blank" href="<?php echo get_theme_mod('instagram'); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<?php } ?>
+								<?php if (get_theme_mod('twitter')!=NULL) {?>
+									<li class="ftco-animate"><a target="_blank" href="<?php echo get_theme_mod('twitter'); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<?php } ?>   
+								<?php if (get_theme_mod('linkedin')!=NULL) {?>
+									<li class="ftco-animate"><a target="_blank" href="<?php echo get_theme_mod('linkedin'); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								<?php } ?>
+
 							</div>
 						</div>
 					</div>
@@ -21,12 +41,16 @@
 							<h2 class="ftco-heading-2">MENÚ</h2>
 							<div class="block-237 ">
 								<ul>
-									<li ><a href="	">Inicio</a></li>
-									<li ><a href="	">Lo Nuevo</a></li>
-									<li ><a href="	">Pijamas</a></li>
-									<li ><a href="	">Ropa Interior</a></li>
-									<li ><a href="	">Ropa Deportiva</a></li>
-									<li ><a href="	">Accesorios</a></li>
+									<li ><a href="<?php echo get_home_url() ?>">Inicio</a></li>
+									<li ><a href="<?php echo get_home_url() ?>/lo-nuevo">Lo Nuevo</a></li>
+
+									<?php $product_categories = get_categories( array( 'taxonomy' => 'product_cat', 'orderby' => 'menu_order', 'order' => 'asc' ));  ?>
+									<?php foreach($product_categories as $category):  global $wpdb;?>
+										<?php $result = $wpdb->get_results ("SELECT * FROM ".$wpdb->prefix."term_taxonomy where taxonomy = 'product_cat'");?> 					
+										<li>
+											<a href="<?php echo get_category_link( $category->term_id ); ?>"> <?=$category->name ?></a>
+										</li>
+									<?php endforeach; ?>									
 								</ul>
 							</div>
 						</div>
@@ -52,9 +76,9 @@
 							<h2 class="ftco-heading-2">CONTACTO</h2>
 							<div class="block-237 ">
 								<ul>
-											<li class="icon-local2"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone-call.svg"><span class="text">+57 335 35 00</span></a></li>
-									<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i><span class="text"> ventas@scelestia.com</span></a></li>
-									<li class="icon-local"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/location.svg"><span class="text">Carrera 49A # 48 Sur - 60 Bodega 121</span></li>
+									<li class="icon-local2"> <a href="tel:<?php echo get_theme_mod('phone'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone-call.svg"><span class="text"><?php echo get_theme_mod('phone'); ?></span></a></li>
+									<li><a href="mailto:<?php echo get_theme_mod('email'); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i><span class="text"> <?php echo get_theme_mod('email'); ?></span></a></li>
+									<li class="icon-local"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/location.svg"><span class="text"><?php echo get_theme_mod('address'); ?></a></span></li>
 								</ul>
 							</div>
 						</div>
