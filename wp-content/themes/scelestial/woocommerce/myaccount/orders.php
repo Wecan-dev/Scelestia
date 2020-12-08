@@ -30,11 +30,11 @@ defined( 'ABSPATH' ) || exit; ?>
 			<div class="historial-flex">
 				<div class="button-home">
 					<button class="back-home">
-						<a href="">Regresar</a>
+						<a href="<?php echo bloginfo('url')?>/mi-cuenta">Regresar</a>
 					</button>
 				</div>
 				<div class="other-home">
-					<a class="a_factura" style="color: #ddd;" href="">Inicio</a>	 / <a style="color:#a0d1af" class="a_factura" href="">Historial de Ordenes</a>
+					<a class="a_factura" style="color: #ddd;" href="<?php echo bloginfo('url')?>/mi-cuenta">Inicio</a>	 / <a style="color:#a0d1af" class="a_factura" href="<?php echo bloginfo('url')?>/mi-cuenta/orders">Historial de Ordenes</a>
 				</div>
 			</div>
 <?php

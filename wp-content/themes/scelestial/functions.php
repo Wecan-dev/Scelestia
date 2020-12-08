@@ -24,7 +24,7 @@ function rosary_styles(){
 	wp_enqueue_script( 'select2',get_bloginfo('stylesheet_directory') . '/assets/vendor/select2/select2.min.js', array( 'jquery' ) );   
 	wp_enqueue_script( 'slick',get_bloginfo('stylesheet_directory') . '/assets/vendor/slick/slick.min.js', array( 'jquery' ) ); 
 	wp_enqueue_script( 'slick-custom',get_bloginfo('stylesheet_directory') . '/assets/js/slick-custom.js', array( 'jquery' ) ); 
-	wp_enqueue_script( 'lightbox',get_bloginfo('stylesheet_directory') . '/assets/vendor/lightbox2/js/lightbox.min.js', array( 'jquery' ) ); 
+	//wp_enqueue_script( 'lightbox',get_bloginfo('stylesheet_directory') . '/assets/vendor/lightbox2/js/lightbox.min.js', array( 'jquery' ) ); 
 	wp_enqueue_script( 'parallax',get_bloginfo('stylesheet_directory') . '/assets/vendor/parallax100/parallax100.js', array( 'jquery' ) );
 	wp_enqueue_script( 'mainjs',get_bloginfo('stylesheet_directory') . '/assets/js/main.js', array( 'jquery' ) );  
 

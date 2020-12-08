@@ -401,7 +401,7 @@ display: flex;
 position: absolute;
     height: 100%;
     top: 75%;
-        right: 6%;
+        right: 2%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -3735,10 +3735,10 @@ position: relative;
 }
 
 .div{
-height: -webkit-fill-available;
-background: url('../images/descuento.png');
-background-size: cover;
-}
+    height: -webkit-fill-available;
+    background: url(../images/descuento.png);
+    background-size: cover!important;
+	background-repeat: no-repeat!important;}
 
 .drop{
 display: flex;
@@ -4718,13 +4718,14 @@ margin-right: -15%;
 width: 300px;
 
 }
+	.slider-nav.slick-initialized.slick-slider {
+    width: 44%; 
+     top: 414px; 
+     left: 150px; 
+     position: absolute;
+	 }
+	
 
-.slider-nav.slick-initialized.slick-slider {
-width: 44%;
-top: 414px;
-left: 150px;
-position: absolute;
-}
 .text-banner h3 {
 font-size: 35px;
 font-family: 'Bodoni SvtyTwo ITC TT';
@@ -5031,6 +5032,21 @@ margin-bottom: 5%;
 
 .title_register h4{
 font-size: 18px;
+	text-align:center;
+}
+
+.title_register{
+	text-align:center;
+}
+
+.woocommerce form .form-row label{
+	display:none;
+}
+legend{
+	display:none;
+}
+.woocommerce form .password-input, .woocommerce-page form .password-input{
+	width:100%;
 }
 
 .register_form input {
@@ -6064,8 +6080,8 @@ i.yith-wcwl-icon.fa.fa-heart-o {
 }
 
 .profile{
-width: 48%;
-    height: 25vh;
+    width: 312px;
+    height: 20vh;
     background: #a0d1af;
     padding: 30px;
     /* height: 200px; */
@@ -6075,11 +6091,13 @@ width: 48%;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 4%;
+    flex-wrap: wrap;
 }
 
 .profile p{
 	color: #fff;
 	font-weight: bold;
+	font-size:20px;
 }
 .sec-option {
      display: flex;
@@ -6088,8 +6106,13 @@ width: 48%;
     margin-top: 5%;
     padding-left: 150px;
     padding-right: 150px;
+    width: 74%;
 }
 
+.woocommerce table.shop_table {
+    border: 1px solid #a0d1af!important;
+    padding: 20px;
+}
 	.orden-green {
 		background: #a0d1af;
 		width: 250px;

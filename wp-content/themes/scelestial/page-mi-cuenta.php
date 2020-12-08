@@ -18,7 +18,7 @@
 get_header(); ?>
 
 
-	<div class="margin-top container" style="margin-top: 100px; margin-bottom: 100px">
+	<div class="margin-top" style="/*margin-top: 100px; margin-bottom: 100px*/">
 		<?php echo do_shortcode('[woocommerce_my_account]'); ?>
 	</div>
 

@@ -287,7 +287,7 @@ left: 1rem;
 }
 
 .logo-mobile img {
-max-height: 40px;
+max-height: 31px;
 }
 
 .comoda h6::before{
@@ -411,8 +411,16 @@ justify-content: center;
 margin-left: 0;
 }
 
+	.multiple-team .slick-next {
+    right: 15px;
+}
+	
+	.multiple-team .slick-prev {
+    left: 15px;
+}
 .reasons h6 {
 font-size: 30px;
+		line-height:1.2;
 }
 
 
@@ -1581,6 +1589,16 @@ color: #a2d2b1!important;
 		.text-banner h1{
 			font-size:35px;
 		}
+
+	.slider-nav.slick-initialized.slick-slider{
+		width: 44%;
+    top: 310px;
+    left: 142px;
+    position: absolute;
+	}
+	.sec-option{
+width: 74%;
+	}
 	
 	.text-product {
     width: 250px;
@@ -1990,6 +2008,7 @@ margin-left: 0;
 
 .reasons h6 {
 font-size: 30px;
+
 }
 
 
