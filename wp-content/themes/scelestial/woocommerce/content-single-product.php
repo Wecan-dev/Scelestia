@@ -70,6 +70,8 @@ if ( post_password_required() ) {
 	</div>
 </div>
 
+
+			  
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
@@ -85,6 +87,14 @@ if ( post_password_required() ) {
 </section>
 </div>
 </div>
+<table class="woocommerce-product-attributes shop_attributes">
+	<?php foreach ( $product_attributes as $product_attribute_key => $product_attribute ) : ?>
+		<tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--<?php echo esc_attr( $product_attribute_key ); ?>">
+			<th class="woocommerce-product-attributes-item__label"><?php echo wp_kses_post( $product_attribute['label'] ); ?></th>
+			<td class="woocommerce-product-attributes-item__value"><?php echo wp_kses_post( $product_attribute['value'] ); ?></td>
+		</tr>
+	<?php endforeach; ?>
+</table>
 <section class="colecciones">
 			<h6>ACERCA DE</h6>
 			<h3 style="margin-bottom: 60px;">Productos Relacionados<br>

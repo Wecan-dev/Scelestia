@@ -253,6 +253,8 @@ $('.multiple-team').slick({
     arrows: false,
     fade: true,
     dots: true,
+	  autoplay: true,
+	  autoplaySpeed: 5000,
     asNavFor: '.slider-nav'
   });
   $('.slider-nav').slick({
@@ -269,7 +271,7 @@ $('.multiple-team').slick({
 
   jQuery('.multiple-items').slick({
     dots: true,
-    autoplay: true,
+    autoplay: false,
     dots: true,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -282,7 +284,7 @@ $('.multiple-team').slick({
   {
     breakpoint: 700,
     settings: {
-      arrows: false,
+      arrows: true,
       dots: false,
       slidesToShow: 1,
       slidesToScroll: 1

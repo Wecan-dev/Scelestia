@@ -16,6 +16,7 @@
  */
 get_header(); ?>
 	<div class="finalizar-c" style=""  >
+
 		<?php echo do_shortcode('[woocommerce_checkout]'); ?>
 		<!-- <a class="button wc-backward" href="<?php echo bloginfo('url').'/index';?>">Ir al inicio</a> -->
 

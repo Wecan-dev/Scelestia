@@ -21,16 +21,20 @@ defined( 'ABSPATH' ) || exit;
 <div class="woocommerce-billing-fields">
 	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
-		<h3><?php esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
+
+		
+		
 
 	<?php else : ?>
 
-		<h3><?php esc_html_e( 'Billing details', 'woocommerce' ); ?></h3>
+		<div class="section_title" style="  margin-left: 4%;"><h3>Proceso de Compra</h3></div>
 
 	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
-
+	<div class="section_title_container text-left">
+			<div class="section_title" ><h3>Proceso de Compra</h3></div>
+		</div>
 	<div class="woocommerce-billing-fields__field-wrapper">
 		<?php
 		$fields = $checkout->get_checkout_fields( 'billing' );

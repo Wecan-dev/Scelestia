@@ -63,7 +63,7 @@
 								<ul>
 									<li ><a href="<?php echo bloginfo('url').'/index.php/terminos-y-condiciones';?>">Términos y condiciones</a></li>
 									<li><a href="<?php echo bloginfo('url').'/index.php/privacy-policy';?>">Políticas y privacidad</a></li>
-									<li><a href="">Entregas y devoluciones</a></li>
+									<li><a href="<?php echo bloginfo('url').'/index.php/entregas-y-devoluciones';?>">Entregas y devoluciones</a></li>
 										<li ><a href="<?php echo bloginfo('url').'/index.php/contacto';?>">Contacto</a></li>
 								</ul>
 							</div>
@@ -78,7 +78,7 @@
 								<ul>
 									<li class="icon-local2"> <a href="tel:<?php echo get_theme_mod('phone'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone-call.svg"><span class="text"><?php echo get_theme_mod('phone'); ?></span></a></li>
 									<li><a href="mailto:<?php echo get_theme_mod('email'); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i><span class="text"> <?php echo get_theme_mod('email'); ?></span></a></li>
-									<li class="icon-local"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/location.svg"><span class="text"><?php echo get_theme_mod('address'); ?></a></span></li>
+									<li class="icon-local"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/location.svg"><span class="text"><a href="https://www.google.com/maps/place/Scelestia+-+Donna+Lingerie+Ltda/@6.165036,-75.602208,16z/data=!4m5!3m4!1s0x0:0x5fd93702c3c15e09!8m2!3d6.1650356!4d-75.6022085?hl=es" target:"_blank"><?php echo get_theme_mod('address'); ?></a></span></li>
 								</ul>
 							</div>
 						</div>

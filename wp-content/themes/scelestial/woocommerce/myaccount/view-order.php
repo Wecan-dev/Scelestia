@@ -23,8 +23,6 @@ defined( 'ABSPATH' ) || exit;
 $notes = $order->get_customer_order_notes();
 
 ?>
-
-
 	<div class="blog-page" style="background-color: #fff!important; ">
 
 		<div class="header "  style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/contacto.png);">
@@ -36,52 +34,62 @@ $notes = $order->get_customer_order_notes();
 		<section class=" container orden">
 			<div class="father-orden">
 				<div class="orden-green">
-					<p>Número de la orden: #3456</p>
+					<p>Número de la orden: #<?php echo $order->get_order_number()?></p>
 
-					<p>Fecha: Abril 20, 2020 8:10pm </p>
+					<p>Fecha: <?php echo wc_format_datetime( $order->get_date_created() ); ?> </p>
 
-					Estado de la orden: En proceso
+					Estado de la orden: <?php echo wc_get_order_status_name( $order->get_status() ); ?>
 				</div>
 			</div>
 			<div class="product-orden">
 				<p>Producto</p>
-				<div class="product-info">
+            <?php
+            global $wpdb;  $id_order = $order->get_order_number();
+              $result_link = $wpdb->get_results( "SELECT * FROM ".$wpdb->prefix."woocommerce_order_items WHERE order_item_type = 'line_item' and order_id = '$id_order'"); 
+              foreach($result_link as $r)
+              {
 
+            ?>				
+				<div class="product-info">
 					<div class="orden_img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/kid4.png">
+						<img src="<?php echo meta_value_img( '_thumbnail_id', woocommerce_order_itemmeta($r->order_item_id, '_product_id')) ?>">
 					</div>
 					<div class="text-order">
-						<p>Pijama de Seda <br>
-							Cantidad: 1 <br>
-							Talla: M<br>
-							Color:Rosado <br>
-						Pendiente Abril 20 del 2020 #34444486879879</p>
+						<p><?php echo get_post(woocommerce_order_itemmeta($r->order_item_id, '_product_id'))->post_title; ?> <br>
+							Cantidad: <?php echo woocommerce_order_itemmeta($r->order_item_id,'_qty'); ?> <br>
+							<?php if ( woocommerce_order_itemmeta($r->order_item_id,'pa_tallas')): ?>
+							Talla: <?php echo woocommerce_order_itemmeta($r->order_item_id,'pa_tallas'); ?><br>
+						    <?php endif; ?>
+						    <?php if ( woocommerce_order_itemmeta($r->order_item_id,'pa_color')): ?>
+							Color: <?php echo woocommerce_order_itemmeta($r->order_item_id,'pa_color'); ?> <br>
+							<?php endif; ?>
 					</div>
 				</div>
+			<?php } ?>	
 			</div>
 			<div class="total-orden">
 				<div class="sub">
 					<p>Subtotal</p>
 				</div>
 				<div >
-					<p style="font-weight: bold;">$180.000</p>
+					<p style="font-weight: bold;"><?php echo  $order->get_subtotal_to_display(); ?></p>
 				</div>
 			</div>
-			<div class="total-orden">
+			<!--<div class="total-orden">
 				<div class="sub">
 					<p>Envio Nacional</p>
 				</div>
 				<div >
 					<p style="font-weight: bold;">$7.000</p>
 				</div>
-			</div>
+			</div>-->
 
 			<div class="total-orden">
 				<div class="sub">
 					<p>TOTAL</p>
 				</div>
 				<div >
-					<p style="font-weight: bold;">$192.000</p>
+					<p style="font-weight: bold;"><?php echo  $order->get_formatted_order_total( ); ?></p>
 				</div>
 			</div>
 
@@ -93,21 +101,25 @@ $notes = $order->get_customer_order_notes();
 						<p>Correo Electrónico:</p>
 					</div>
 					<div >
-						<p>margarita.pelaez@hotmail.com</p>
+						<p><?php echo $order->get_billing_email(); ?></p>
 					</div>
 				</div>
 				<hr>
 			</div>
 
-			<div class="factura">
+	        <div class="factura">
 				<div class="factura-direccion">
 					<p>Dirección de Facturación</p>
 					<div class="info_factura">
-						<p>Calle 60 # 45-156 <br>
-						Medellín - Colombia</p>
+						<p><?php echo $order->get_formatted_billing_address(); ?> </p>
 						<div>
 						<button class="a_factura">
-							<a href="">Editar</a>
+							
+							<?php if ($order->get_formatted_billing_address() != NULL){?> 
+							   <a href="<?php echo get_home_url() ?>/mi-cuenta/edit-address/facturacion/" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Editar', 'woocommerce' ); ?></a>
+						    <?php }else{ ?>
+							   <a href="<?php echo get_home_url() ?>/mi-cuenta/edit-address/envio/" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?></a>
+						    <?php } ?>
 						</button>
 					</div>
 					</div>
@@ -115,22 +127,30 @@ $notes = $order->get_customer_order_notes();
 								<div class="factura-direccion">
 					<p>Dirección de Envío</p>
 					<div class="info_factura">
-						<p>Calle 60 # 45-156 <br>
-						Medellín - Colombia</p>
+						<p><?php echo $order->get_shipping_first_name(); ?> </p>
 						<div>
 						<button class="a_factura">
-							<a href="">Editar</a>
-						</button>
+							
+							<?php if ($order->get_formatted_shipping_address() != NULL){?> 
+							   <a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Editar', 'woocommerce' ); ?></a>
+						    <?php }else{ ?>
+							   <a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?></a>
+						    <?php } ?>
+						</button>						
 					</div>
 					</div>
 				</div>
-				<div>
-					<button class="a_factura">
-							<a href="">+ Agregar otra <br> dirección</a>
-						</button>
-					
-				</div>
+
 			</div>
+
 
 		</section>
 	</div>
+
+<p>
+
+</p>
+
+
+
+<?php// do_action( 'woocommerce_view_order', $order_id ); ?>

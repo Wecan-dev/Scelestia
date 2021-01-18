@@ -19,13 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="row no-gutters">
-	<div class="col">
-		<div class="section_title_container text-left">
-			<div class="section_title" style="  margin-left: 4%;"><h3>Formulario de Pago</j3></span></div>
-		</div>
-	</div>
-</div>
+
 <?php
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
@@ -73,3 +67,12 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 </div>
+
+
+<script type="text/javascript">
+    
+   // var user_logged = "<?= $user_logged ?>"; 
+   // $("input#additional_wooccm0").val(user_logged);
+	$('#order_review').appendTo('.contact-sidebar');
+	$('#payment').appendTo('#customer_details');
+</script>

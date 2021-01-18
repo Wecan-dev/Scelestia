@@ -75,3 +75,18 @@ $col    = 1;
 	</div>
 	<?php
 endif;
+
+?>
+		<section class="historial">
+			<div class="historial-flex">
+				<div class="button-home">
+					<button class="back-home">
+						<a href="javascript:history.go(-2)">Regresar</a>
+					</button>
+				</div>
+				<div class="other-home">
+					<a class="a_factura" style="color: #ddd;" href="<?php echo bloginfo('url')?>/mi-cuenta">Inicio</a>	 / <a style="color:#a0d1af" class="a_factura" href="<?php echo bloginfo('url')?>/mi-cuenta/orders">Historial de Ordenes</a>
+				</div>
+			</div>
+	    </section>		
+<?php	

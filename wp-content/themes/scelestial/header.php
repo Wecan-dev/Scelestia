@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php wp_head(); ?>
-<html lang="en">
+<html lang="<?php bloginfo('language'); ?>">
 <head>
 	<title>Scelestia</title>
 	<meta charset="UTF-8">
@@ -177,9 +177,22 @@
 				<div class="topbar-child2">
 					<span class="topbar-email">
 						<?php if (is_user_logged_in() == NULL){ ?>
-						   <a href="<?php echo get_home_url() ?>/inicio-sesion"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+						   	<button class="btn dropdown-hover" >
+						   		<a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+								<div class="dropdown-hoverContent" >
+						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/inicio-sesion">Sesión Compradores</a>
+						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/registro-vendedores">Sesión Vendedores</a>
+						   		</div>	
+						   	</button>
+						   				
 						<?php }else{ ?>  
-							<a href="<?php echo get_home_url() ?>/mi-cuenta"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+							<button class="btn dropdown-hover" >
+						   		<a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+								<div class="dropdown-hoverContent" >
+						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/mi-cuenta">Mi cuenta</a>
+						   		<a class="dropdown-item" href="<?php echo wp_logout_url( home_url()); ?>">Cerrar Sesión </a>
+						   		</div>	
+						   	</button>
 						<?php } ?> 						
 						
 
@@ -187,7 +200,7 @@
 								
          <button type="button"  data-toggle="modal" data-target="#cartModal" href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0;"><span class="fa fa-shopping-bag"></span>
 				  <p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></button>
-
+					</span>
 				</div>
 			</div>
 
@@ -282,12 +295,11 @@
 					
 
 					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-						<li>
+					
 							<i class="fa fa-search" aria-hidden="true"></i>
 	
  									<?php dynamic_sidebar( 'sidebar-1' ); ?>
 						</li>
-					</li>
 
 
 					<li class="item-menu-mobile">
@@ -328,27 +340,27 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <?php
+      defined( 'ABSPATH' ) || exit;
+
+      foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+      	$_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+      	if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) { ?>      
+      <div class="modal-body">      	
 		<div class="flex-cart">
 			<div class="img-cart">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/card2.png">
+				<?php echo $_product->get_image();?>
 			</div>
 			<div>
-				<p>
-					Pijama Rose
-				</p>
-				<p>
-					Cantidad: 2
-				</p>
-				<p>
-					Color: Rosado
-				</p>
-				<p>
-					Precio: $100.000
-				</p>
+				<strong><?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong><br>
+				Cantidad: <?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><br>
+				<?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				Precio: <?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
-		  </div>
+		</div>
       </div>
+   <?php  }  } ?>
+
       <div class="modal-footer border-top-0 ">
 		  <div class="d-flex justify-content-between total-cart">
 			  
@@ -356,7 +368,7 @@
 			Total
 		  </div>
 		  <div style="font-weight:bold;">
-			  $180.000
+			  <?php wc_cart_totals_order_total_html(); ?>
 		  </div>
 		  </div>
 		  <div style="width:100%;">

@@ -134,3 +134,91 @@ function custom_post_type_Items_banner() {
 
 }
 add_action( 'init', 'custom_post_type_Items_banner', 0 );
+
+/*********** Items Team***********/
+function custom_post_type_Items_team() {
+
+  $labels = array(
+    'name'                  => _x( 'Items Team', 'Post Type General Name', 'text_domain' ),
+    'singular_name'         => _x( 'Items Team', 'Post Type Singular Name', 'text_domain' ),
+    'menu_name'             => __( 'Items Team', 'text_domain' ),
+    'name_admin_bar'        => __( 'Items Team', 'text_domain' ),
+    'archives'              => __( 'Archives', 'text_domain' ),
+    'attributes'            => __( 'Attributes', 'text_domain' ),
+    'parent_item_colon'     => __( 'Main Items Team', 'text_domain' ),
+    'all_items Team'             => __( 'All Items Team', 'text_domain' ),
+    'add_new_item'          => __( 'Add New Items Team', 'text_domain' ),
+    'add_new'               => __( 'Add New', 'text_domain' ),
+    'new_item'              => __( 'New Items Team', 'text_domain' ),
+    'edit_item'             => __( 'Edit Items Video', 'text_domain' ),
+    'update_item'           => __( 'Update Items Team', 'text_domain' ),
+    'view_items Team'            => __( 'See Items Team', 'text_domain' ),
+    'search_items Team'          => __( 'Search Items Team', 'text_domain' ),
+    'not_found'             => __( 'Not found', 'text_domain' ),
+    'not_found_in_trash'    => __( 'It is not in the trash', 'text_domain' ),
+    'featured_image'        => __( 'Featured Image', 'text_domain' ),
+    'set_featured_image'    => __( 'Set Featured Image', 'text_domain' ),
+    'remove_featured_image' => __( 'Remove Featured Image', 'text_domain' ),
+    'use_featured_image'    => __( 'Use Featured Image', 'text_domain' ),
+    'insert_into_item'      => __( 'Insert Into Item', 'text_domain' ),
+    'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+    'items Team_list'            => __( 'items Team List', 'text_domain' ),
+    'items Team_list_navigation' => __( 'items Team List Navigation', 'text_domain' ),
+    'filter_items Team_list'     => __( 'filter Items Team List', 'text_domain' ),
+  );
+  $args = array(
+    'label'                 => __( 'Items Team', 'text_domain' ),
+    'description'           => __( 'Items Team image', 'text_domain' ),
+    'labels'                => $labels,
+    'supports'              => array( 'title', 'custom-fields' ),
+    'taxonomies'            => array( '' ),
+    'hierarchical'          => false,
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 5,
+    'menu_icon'             => 'dashicons-images-alt',
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => true,
+    'can_export'            => true,
+    'has_archive'           => true,
+    'exclude_from_search'   => false,
+    'publicly_queryable'    => true,
+    'capability_type'       => 'page', 
+  );
+  register_post_type( 'Items Team', $args );
+
+}
+add_action( 'init', 'custom_post_type_Items_team', 0 );
+
+
+
+
+function azafran_search() {
+	register_sidebar(
+		array(
+			'name'          => __( 'azafran search' ),
+			'id'            => 'sidebar-3',
+			'description'   => __( 'Widget buscador'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	
+}
+add_action( 'widgets_init', 'azafran_search' );
+
+/**
+* Función para cambiar las etiquetas(labels) y placeholders de los campos que no sean de dirección
+*/
+function claserama_edit_address_labels_placeholders_checkout($address_fields){
+    $address_fields['country']['placeholder']='pais';
+    $address_fields['address_1']['placeholder']='Dirección';
+	//$address_fields['address_2']['placeholder']='Apartamento, torre, etc.';
+	$address_fields['postcode']['placeholder']='Código postal.';
+    return $address_fields;
+}
+add_filter('woocommerce_default_address_fields','claserama_edit_address_labels_placeholders_checkout');

@@ -17,7 +17,7 @@
 			<div class="about_text">
 				<p><?php echo get_theme_mod('about_description');?><br> </p>
 
-					<div class="btn-oficial">
+					<div class="btn-oficialq">
 						<a href="<?php echo get_theme_mod('about_urlbuttom');?>">
 							<?php echo get_theme_mod('about_buttom');?> <i style="color: #9fd0ae" class="fa fa-angle-right" aria-hidden="true"></i>
 						</a>

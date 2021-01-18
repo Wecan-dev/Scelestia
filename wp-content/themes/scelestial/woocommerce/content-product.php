@@ -35,7 +35,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
  ?>
 
 
-		<div class="block4 card-product">
+		<div class=" card-product">
 					<img src="<?php echo get_the_post_thumbnail_url(); ?>">
 					<div class="text-product">
 						<h5><?php the_title(); ?></h5>
@@ -47,10 +47,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 						</div>
 					</div>
 					<div class="block2-overlay trans-0-4">
-						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-							<i class="fa fa-heart" aria-hidden="true"></i>
-							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-						</a>
+                        <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>						
 
 						<div class="block2-btn-addcart trans-0-4">
 							<!-- Button -->

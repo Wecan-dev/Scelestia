@@ -22,7 +22,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 <section class="register">
 	<div class="register_form container">
 		<div class="title_register">
-			<i class="fa fa-user" style="color:#a0d1af; margin-bottom: 10%;" aria-hidden="true"></i>
+			<i class="fa fa-user" style="color:#a0d1af; margin-bottom: 10%; font-size: 25px;" aria-hidden="true"></i>
 
 			<h4><span style="color: #000; font-weight: bold;">Mi Cuenta</span> <br>Mi Información</h4>
 		</div>
@@ -32,7 +32,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 
 	<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
 		<label for="account_first_name"><?php esc_html_e( 'First name', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
-		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" placeholder="Nombres" autocomplete="given-name" value="<?php echo esc_attr( $user->first_name ); ?>" />
+		<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" placeholder="<?php esc_html_e( 'First name', 'woocommerce' ); ?>" autocomplete="given-name" value="<?php echo esc_attr( $user->first_name ); ?>" />
 	</p>
 	<p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
 

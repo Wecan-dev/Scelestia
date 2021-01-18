@@ -1,4 +1,4 @@
-<?php if (is_user_logged_in() != NULL ){ header('Location: '.get_home_url().''); } ?>
+<?php if (is_user_logged_in() != NULL ){ header('Location: '.get_home_url().'/mi-cuenta'); } ?>
 <?php get_header(); ?>
 <?php
 /**
@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 	<div class="register_form container">
 
 			<div class="title_register">
-				<i class="fa fa-user-circle-o" style="color:#a0d1af; margin-bottom: 10%;" aria-hidden="true"></i>
+				<i class="fa fa-user-circle-o" style="color:#a0d1af; margin-bottom: 10%; font-size: 25px;" aria-hidden="true"></i>
 
 				<h4><span style="color: #000; font-weight: bold;">Iniciar Sesión</span> <br> Compradores</h4>
 			</div>	
@@ -95,7 +95,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			</div>
            <?php echo do_shortcode('[user_registration_form id="114"]');  ?>
 		
-			<p style="font-weight: bold; ">De regreso a iniciar sesión <i style="color: #000" class="fa fa-angle-right" aria-hidden="true"></i></p>
+			<a href="?create"><p style="font-weight: bold; ">De regreso a iniciar sesión <i style="color: #000" class="fa fa-angle-right" aria-hidden="true"></i></p></a>
 	</div>
 </section>	
 

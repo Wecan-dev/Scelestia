@@ -524,3 +524,29 @@ function meta_value( $meta_key, $post_id ){
               return $value;
 
 }
+
+/***************** Meta User *****************/
+function meta_user_value( $meta_key, $post_id ){
+            global $wpdb; 
+            $value = NULL; 
+              $result_link = $wpdb->get_results( "SELECT * FROM ".$wpdb->prefix."usermeta WHERE meta_key = '$meta_key' and user_id = '$post_id'"); 
+              foreach($result_link as $r)
+              {
+                      $value = $r->meta_value;                      
+              }
+              return $value;
+
+}
+
+/***************** Oderr  *****************/
+function woocommerce_order_itemmeta( $order_item_id, $meta_key ){
+            global $wpdb;  
+              $result_link = $wpdb->get_results( "SELECT * FROM ".$wpdb->prefix."woocommerce_order_itemmeta WHERE order_item_id = '$order_item_id' and meta_key = '$meta_key'"); 
+              foreach($result_link as $r)
+              {
+                      $value = $r->meta_value;                      
+              }
+              
+              return $value;
+
+}
