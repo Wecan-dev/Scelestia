@@ -232,6 +232,13 @@
                 <span style="color: #000; font-size: 15px;"><a href="tel:+57 335 35 00"><?php echo get_theme_mod('phone'); ?></a></span>
               </div>
               </li>
+			    <li class="">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/phone-call (1).svg">
+                <div style="margin-left:10px;">
+                <span style="color: #000; font-size: 16px; font-weight: 600;">Movil</span> <br>
+                <span style="color: #000; font-size: 15px;"><a href="tel:314 887 9752"><?php echo get_theme_mod('Numero_whatssapp'); ?></a></span>
+              </div>
+              </li>
               <li>
                 <img style="width:24px;" src="<?php echo get_template_directory_uri(); ?>/assets/images/loca.svg">
                 <div style="margin-left:7px;">

@@ -36,13 +36,14 @@ if ( ! defined( 'ABSPATH' ) ) {
       <div class="container sec-option">
       	<a href="<?php echo bloginfo('url')?>/mi-cuenta/edit-account">
       	  <div class="profile">
-      		 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fill-1125.svg">
+             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shape (2).svg">
       		 <p>Mi información</p>
       	  </div>
         </a>
         <a href="<?php echo bloginfo('url')?>/mi-cuenta/orders">
       	  <div class="profile">
-      		 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/shape (2).svg">
+			 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fill-1125.svg">
+      		 
       		 <p>Historial de Ordenes</p>
       	  </div>
       	</a>

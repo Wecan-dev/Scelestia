@@ -47,8 +47,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 						</div>
 					</div>
 					<div class="block2-overlay trans-0-4">
-                        <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>						
-
+							<div class ="icono-fondo">
+							  <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>			
+						</div>
+				
 						<div class="block2-btn-addcart trans-0-4">
 							<!-- Button -->
 							<button class="btn-oficial2">

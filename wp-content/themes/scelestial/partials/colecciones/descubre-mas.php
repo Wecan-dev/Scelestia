@@ -1,7 +1,7 @@
 	<section style=" padding-top: 50px;" class="descubre ">
 		<div class="btn-oficial-des line-this">
 			<h6 style="color: #353636; font-weight: bold;" >
-				<a style="color:#353636; " href="#">Descubre más</a>
+				<a style="color:#353636; " href="http://159.89.229.55/Scelestia/product-category/pijama/">Descubre más</a>
 			</h6>
 		</div>
 	</section>

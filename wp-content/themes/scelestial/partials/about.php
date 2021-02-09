@@ -1,7 +1,7 @@
 	<section id="about" class="container about">
 		<div class="about_flex">
 			<div class="about_info">
-				<h6><?php echo get_theme_mod('about_title');?></h6>
+				
 				<h3><?php echo get_theme_mod('about_subtitle');?></h3>			
 				<div class="green">
 					<img src="<?php echo get_theme_mod('about_image1');?>">

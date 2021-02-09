@@ -8,7 +8,7 @@
 	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/fav.png"/>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/vendor/bootstrap/css/bootstrap.css">
 	<!--===============================================================================================-->
@@ -32,6 +32,15 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/media.css">
 	<!--===============================================================================================-->
+	
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MGSM3F5');</script>
+<!-- End Google Tag Manager -->
+
 </head>
 
 <div class="elipse">
@@ -56,9 +65,16 @@
 
 
 <body >
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGSM3F5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+	
 	<div class="btn-whatsapp">
-		<a class="face" target="_blank" href="https://www.facebook.com/Fiorellabelleza"> <i  class="fa fa-facebook"></i></a>
-		<a class="insta" target="_blank" href="https://www.instagram.com/fiorella.vidaybelleza/">  <i class="fa fa-instagram"></i></a>
+		<a class="face" target="_blank" href="<?php echo get_theme_mod('facebook'); ?>"> <i  class="fa fa-facebook"></i></a>
+		<a class="insta" target="_blank" href="<?php echo get_theme_mod('instagram'); ?>">  <i class="fa fa-instagram"></i></a>
 	</div>
 	<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
@@ -139,7 +155,8 @@
 					</li>
 
 					<li>
-						<i class="fa fa-search" aria-hidden="true"></i> 
+						<img class="icono-search" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/search@3x.png">
+					<!--	<i class="fa fa-search" aria-hidden="true"></i> -->
 						<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
 					</li>
@@ -154,7 +171,28 @@
 
 			<div class="header-wrapicon2">
 				<span class="topbar-email">
-              <button type="button"  data-toggle="modal" data-target="#cartModal" href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0;"><span class="fa fa-shopping-bag"></span>
+            
+					<?php if (is_user_logged_in() == NULL){ ?>
+						   	<button class="btn dropdown-hover" >
+						   		<a href="#"><img class="icono-secion" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/shape@3x.png"></a>
+								<div class="dropdown-hoverContent" >
+						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/inicio-sesion">Sesión Compradores</a>
+						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/registro-vendedores">Sesión Vendedores</a>
+						   		</div>	
+						   	</button>
+						   				
+						<?php }else{ ?>  
+							<button class="btn dropdown-hover" >
+						   		<a href="#"><img class="icono-secion" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/shape@3x.png"></a>
+								<div class="dropdown-hoverContent" >
+						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/mi-cuenta">Mi cuenta</a>
+						   		<a class="dropdown-item" href="<?php echo wp_logout_url( home_url()); ?>">Cerrar Sesión </a>
+						   		</div>	
+						   	</button>
+						<?php } ?> 						
+						
+						<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;     justify-content: center; margin-left: -14px;"><img class="img-corazon" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/fill-1161@3x.png"><p class="mini-cart"><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></p></a>
+					  <button type="button"  data-toggle="modal" data-target="#cartModal" href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0; margin-right: 0px;"><img class="icono-carrito" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/fill-929@3x.png">
 				  <p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></button>
 				</span>
 				
@@ -178,7 +216,7 @@
 					<span class="topbar-email">
 						<?php if (is_user_logged_in() == NULL){ ?>
 						   	<button class="btn dropdown-hover" >
-						   		<a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+						   		<a href="#"><img class="icono-secion" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/shape@3x.png"></a>
 								<div class="dropdown-hoverContent" >
 						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/inicio-sesion">Sesión Compradores</a>
 						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/registro-vendedores">Sesión Vendedores</a>
@@ -187,7 +225,7 @@
 						   				
 						<?php }else{ ?>  
 							<button class="btn dropdown-hover" >
-						   		<a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+						   		<a href="#"><img class="icono-secion" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/shape@3x.png"></a>
 								<div class="dropdown-hoverContent" >
 						   		<a class="dropdown-item" href="<?php echo get_home_url() ?>/mi-cuenta">Mi cuenta</a>
 						   		<a class="dropdown-item" href="<?php echo wp_logout_url( home_url()); ?>">Cerrar Sesión </a>
@@ -196,9 +234,9 @@
 						<?php } ?> 						
 						
 
-						<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i><p class="mini-cart"><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></p></a>
+						<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><img class="img-corazon" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/fill-1161@3x.png"><p class="mini-cart"><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></p></a>
 								
-         <button type="button"  data-toggle="modal" data-target="#cartModal" href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0;"><span class="fa fa-shopping-bag"></span>
+         <button type="button"  data-toggle="modal" data-target="#cartModal" href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0;  margin-left: -30px;"><img class="icono-carrito" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/fill-929@3x.png">
 				  <p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></button>
 					</span>
 				</div>
@@ -234,7 +272,8 @@
 							</li>
 
 							<li>
-								<i class="fa fa-search" aria-hidden="true"></i> 
+									<img class="icono-search" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/search@3x.png">
+							<!--	<i class="fa fa-search" aria-hidden="true"></i> -->
 								<?php dynamic_sidebar( 'sidebar-1' ); ?>
 
 							</li>
@@ -269,13 +308,13 @@
 					<div class="header-wrapicon2">
 						<span class="topbar-email">
 						<?php if (is_user_logged_in() == NULL){ ?>
-						   <a href="<?php echo get_home_url() ?>/inicio-sesion"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+						   <a href="<?php echo get_home_url() ?>/inicio-sesion"><img class="icono-secion" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/shape@3x.png"></a>
 						<?php }else{ ?>  
-							<a href="<?php echo get_home_url() ?>/mi-cuenta"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+							<a href="<?php echo get_home_url() ?>/mi-cuenta"><img class="icono-secion" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/shape@3x.png"></a>
 						<?php } ?> 							
 							
-							<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><i class="fa fa-heart-o" aria-hidden="true"></i><p class="mini-cart"><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></p></a>
-<button type="button"  data-toggle="modal" data-target="#cartModal" href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0;"><span class="fa fa-shopping-bag"></span>
+							<a href="<?php echo get_home_url() ?>/Wishlist" class="nav-link" style="padding:0;"><img class="img-corazon" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/fill-1161@3x.png"><p class="mini-cart"><?php $wishlist_count = YITH_WCWL()->count_products(); echo esc_html( $wishlist_count ); ?></p></a>
+<button type="button"  data-toggle="modal" data-target="#cartModal" href="<?php echo $url_carro; ?>" class="nav-link"  style="padding:0;"><img class="icono-carrito" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/fill-929@3x.png">
 				  <p class="mini-cart"><?php echo WC()->cart->get_cart_contents_count(); ?></p></button>						</span>
 					</div>
 				</div>
@@ -364,10 +403,10 @@
       <div class="modal-footer border-top-0 ">
 		  <div class="d-flex justify-content-between total-cart">
 			  
-        <div style="font-weight:bold;">
+        <div style="font-weight:bold; font-family: 'Poppins', sans-serif;;">
 			Total
 		  </div>
-		  <div style="font-weight:bold;">
+		  <div style="font-weight:bold;     text-align: right;">
 			  <?php wc_cart_totals_order_total_html(); ?>
 		  </div>
 		  </div>

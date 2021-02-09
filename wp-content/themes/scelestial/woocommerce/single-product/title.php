@@ -18,5 +18,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-
+?>
+<div class="enter_list"></div>
+<?php
 the_title( '<h1 class="product_title entry-title">', '</h1>' );

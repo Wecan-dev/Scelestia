@@ -8,31 +8,22 @@
 	      				<?php $loop = new WP_Query( $args ); ?>
 			<div class="multiple-items">
 				<?php while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-				<div class="block4 card-product">
-					<img class="img-home__colecciones" src="<?php echo get_the_post_thumbnail_url(); ?>">
+			<div class=" card-product">
+					<img class="img-colecciones__home" src="<?php echo get_the_post_thumbnail_url(); ?>">
 					<div class="text-product__colecciones">
 						<h5><?php the_title(); ?></h5>
 						<p><?php echo $product->get_price_html(); ?></p>
-						<?php if ($product->sku != NULL) { ?>
-							<p>Ref: <?php echo $product->sku;  ?></p>
-						<?php } ?> 						
 						<div class="shop-btn">
 							<a href="<?php the_permalink(); ?>">
 								COMPRAR
 							</a>
 						</div>
 					</div>
-					<?php if ( YITH_WCWL()->is_product_in_wishlist($product->id, $default_wishlist) > 0){  ?>	
-					<div class="icon-heart">					
-					  <i class="fa fa-heart" aria-hidden="true"></i>
-					</div>  
-					<?php }else{ ?> 				  
 					<div class="block2-overlay__colecciones trans-0-4">
-						<a href="?add_to_wishlist=<?php echo get_the_ID(); ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
-							<i class="fa fa-heart" aria-hidden="true"></i>
-							<i class="icon-wishlist icon_heart" aria-hidden="true"></i>
-						</a>
-
+						<div class ="icono-fondo">
+							  <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>			
+						</div>
+                      			
 
 						<div class="block2-btn-addcart__colecciones trans-0-4">
 							<!-- Button -->
@@ -41,8 +32,8 @@
 							</button>
 						</div>
 					</div>
-				<?php } ?>
 				</div>
+    		
 					<?php endwhile ?>
 				
 			</div>

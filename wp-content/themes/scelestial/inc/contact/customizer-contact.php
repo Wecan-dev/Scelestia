@@ -35,6 +35,15 @@
     'section' => 'contact',
     'settings' => 'phone'
   )));  
+$wp_customize->add_setting('Numero_whatssapp', array(
+		'default' => ''
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'Numero_whatssapp_control', array(
+		'label' => 'Numero-whatssapp',
+		'section' => 'contact',
+		'settings' => 'Numero_whatssapp',
+	)));
 
   $wp_customize->add_setting('address', array(
     'default' => ''

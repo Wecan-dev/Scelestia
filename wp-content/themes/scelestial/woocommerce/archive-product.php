@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
-
+$urlsinparametros= explode('?', $_SERVER['REQUEST_URI'], 2);
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -57,6 +57,108 @@ if ( woocommerce_product_loop() ) {
   
 
   woocommerce_product_loop_start();?>
+<a href="#navigation" class="nav-trigger">
+  Menu <span></span>
+</a>
+
+
+
+<nav class="nav-container" id="navigation">
+  <div class="filter">
+    <a class="btn-filter--title" >Filtros <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+     <?php echo woocommerce_catalog_ordering();  ?> 
+    <div id="collapseOne" >
+         
+      
+      <h2 class="widget-title">CATEGORÍAS</h2>
+          <?php
+          global $wpdb;
+          $product_categories = get_categories( array( 'taxonomy' => 'product_cat', 'orderby' => 'menu_order', 'order' => 'asc', 'parent' =>0  ));  
+          ?>                                                        
+          <?php foreach($product_categories as $category): ?>
+            <?php $checked =NULL;  if ($category->slug == $_GET['cat']) { $checked = "checked='checked'"; } $categoria = $category->name; $category_id = $category->term_id; $category_link = get_category_link( $category_id ); ?>         
+              <li>
+                <?php if (get_queried_object()->slug == $category->slug){ ?>
+                  <a class="cat_filter" href="<?php echo get_home_url().'/tienda/?'.$urlsinparametros[1]?>">
+                      <?php echo  $categoria ?>
+                      <span class="checked">
+                         <i class="fa fa-times-circle" aria-hidden="true"></i>
+                      </span>
+                  </a>
+                <?php } else { ?>
+                  <a class="cat_filter" href="<?php echo get_home_url().'/product-category/'.$category->slug?>">
+                      <?php echo  $categoria ?>
+                  </a>                
+                <?php } ?>  
+              </li>
+              <?php endforeach; ?> 
+  <?php dynamic_sidebar( 'sidebar-2' ); ?>  
+    <h2 class="widget-title">Colores</h2>
+                <?php
+                  global $wpdb;
+                  $product_categories = get_categories( array( 'taxonomy' => pa_color, 'orderby' => 'menu_order', 'order' => 'asc' ));  
+                  ?>                                                        
+                  <?php foreach($product_categories as $category): ?>
+                    <?php $checked = NULL; $categoria = $category->name; $category_id = $category->term_id; $category_link = get_category_link( $category_id ); ?> 
+                    <?php 
+                    if ($category->slug == $_GET['cat']) { $checked = "checked='checked'"; }
+                    global $wpdb;
+                    $count = 0;
+                    $result1 = $wpdb->get_results ("SELECT * FROM ".$wpdb->prefix."termmeta where term_id = '$category_id' and meta_key = 'pa_color_swatches_id_phoen_color'");
+                    foreach ( $result1 as $page1 )
+                      {  $color = $page1->meta_value;}
+                    ?> 
+          <?php if (get_queried_object()->slug != NULL) { ?>            
+              <?php if ( count_product_cat(get_queried_object()->slug,$category->slug) > 0 ) { ?>
+                    <li>
+                        <?php if ($_GET["filter_color"] != NULL && $_GET["filter_color"] == $category->slug){ ?> 
+                          <span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
+                             <a class="hover_cat" href="<?php echo $urlsinparametros[0].'?&amp;query_type_color=or';?>">               
+                                <?= $categoria ?> 
+                                <span class="checked">
+                                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        <?php }else{ ?> 
+                          <span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
+                             <a class="filter-a" href="<?php echo $urlsinparametros[0].'/?filter_color='.$category->slug;?>">
+                              <?= $categoria ?>              
+                             </a>
+                        <?php }  ?>                     
+                    </li>
+              <?php } ?>      
+        <?php }else { ?>
+                    <li>
+                        <?php if ($_GET["filter_color"] != NULL && $_GET["filter_color"] == $category->slug){ ?> 
+                          <span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
+                             <a class="hover_cat" href="<?php echo $urlsinparametros[0].'?&amp;query_type_color=or';?>">               
+                                <?= $categoria ?> 
+                                <span class="checked">
+                                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        <?php }else{ ?> 
+                          <span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
+                             <a class="filter-a" href="<?php echo $urlsinparametros[0].'/?filter_color='.$category->slug;?>">
+                              <?= $categoria ?>              
+                             </a>
+                        <?php }  ?>                     
+                    </li> 
+        <?php } ?>                     
+                  <?php endforeach; ?>    
+    
+          <div class="shop-sidebar__newsletter">
+          
+
+        <?php echo do_shortcode('[formidable id=2]');  ?>
+      </div>  
+    
+    </div>
+   </div>
+
+ 
+</nav>
+
 <section class="shop-content">
 <div class="shop-flex">
   <div class="filter">
@@ -64,50 +166,90 @@ if ( woocommerce_product_loop() ) {
      <?php echo woocommerce_catalog_ordering();  ?> 
     <div id="collapseOne" >
          
-      <?php dynamic_sidebar( 'sidebar-2' ); ?>
-		<h2 class="widget-title">Colores</h2>
-								<?php
-									global $wpdb;
-									$product_categories = get_categories( array( 'taxonomy' => pa_color, 'orderby' => 'menu_order', 'order' => 'asc' ));  
-									?>                                                        
-									<?php foreach($product_categories as $category): ?>
-										<?php $checked = NULL; $categoria = $category->name; $category_id = $category->term_id; $category_link = get_category_link( $category_id ); ?> 
-										<?php 
-										if ($category->slug == $_GET['cat']) { $checked = "checked='checked'"; }
-										global $wpdb;
-										$count = 0;
-										$result1 = $wpdb->get_results ("SELECT * FROM ".$wpdb->prefix."termmeta where term_id = '$category_id' and meta_key = 'pa_color_swatches_id_phoen_color'");
-										foreach ( $result1 as $page1 )
-											{  $color = $page1->meta_value;}
-										?>				
-										<li>
-
-
+      
+      <h2 class="widget-title">CATEGORÍAS</h2>
+          <?php
+          global $wpdb;
+          $product_categories = get_categories( array( 'taxonomy' => 'product_cat', 'orderby' => 'menu_order', 'order' => 'asc', 'parent' =>0  ));  
+          ?>                                                        
+          <?php foreach($product_categories as $category): ?>
+            <?php $checked =NULL;  if ($category->slug == $_GET['cat']) { $checked = "checked='checked'"; } $categoria = $category->name; $category_id = $category->term_id; $category_link = get_category_link( $category_id ); ?>         
+              <li>
+                <?php if (get_queried_object()->slug == $category->slug){ ?>
+                  <a class="cat_filter" href="<?php echo get_home_url().'/tienda/?'.$urlsinparametros[1]?>">
+                      <?php echo  $categoria ?>
+                      <span class="checked">
+                         <i class="fa fa-times-circle" aria-hidden="true"></i>
+                      </span>
+                  </a>
+                <?php } else { ?>
+                  <a class="cat_filter" href="<?php echo get_home_url().'/product-category/'.$category->slug?>">
+                      <?php echo  $categoria ?>
+                  </a>                
+                <?php } ?>  
+              </li>
+              <?php endforeach; ?> 
+  <?php dynamic_sidebar( 'sidebar-2' ); ?>  
+    <h2 class="widget-title">Colores</h2>
+                <?php
+                  global $wpdb;
+                  $product_categories = get_categories( array( 'taxonomy' => pa_color, 'orderby' => 'menu_order', 'order' => 'asc' ));  
+                  ?>                                                        
+                  <?php foreach($product_categories as $category): ?>
+                    <?php $checked = NULL; $categoria = $category->name; $category_id = $category->term_id; $category_link = get_category_link( $category_id ); ?> 
+                    <?php 
+                    if ($category->slug == $_GET['cat']) { $checked = "checked='checked'"; }
+                    global $wpdb;
+                    $count = 0;
+                    $result1 = $wpdb->get_results ("SELECT * FROM ".$wpdb->prefix."termmeta where term_id = '$category_id' and meta_key = 'pa_color_swatches_id_phoen_color'");
+                    foreach ( $result1 as $page1 )
+                      {  $color = $page1->meta_value;}
+                    ?> 
+          <?php if (get_queried_object()->slug != NULL) { ?>            
+              <?php if ( count_product_cat(get_queried_object()->slug,$category->slug) > 0 ) { ?>
+                    <li>
                         <?php if ($_GET["filter_color"] != NULL && $_GET["filter_color"] == $category->slug){ ?> 
-<span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
-							<a class="hover_cat" href="<?php echo get_home_url().'/tienda?&amp;query_type_color=or';?>"> 
-							
-								<?= $categoria ?>	
-									<span class="checked">
-								<i class="fa fa-times-circle" aria-hidden="true"></i>
-								</span>
-								
-							</a>
+                          <span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
+                             <a class="hover_cat" href="<?php echo $urlsinparametros[0].'?&amp;query_type_color=or';?>">               
+                                <?= $categoria ?> 
+                                <span class="checked">
+                                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                </span>
+                            </a>
                         <?php }else{ ?> 
-	<span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
-							<a class="filter-a" href="<?php echo get_home_url().'/tienda?filter_color='.$category->slug.'&amp;query_type_color=or';?>"><?= $categoria ?>							    
-							
-							</a>
-
-                        <?php }  ?>											
-										</li>
-									<?php endforeach; ?>		
-		
+                          <span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
+                             <a class="filter-a" href="<?php echo $urlsinparametros[0].'/?filter_color='.$category->slug;?>">
+                              <?= $categoria ?>              
+                             </a>
+                        <?php }  ?>                     
+                    </li>
+              <?php } ?>      
+        <?php }else { ?>
+                    <li>
+                        <?php if ($_GET["filter_color"] != NULL && $_GET["filter_color"] == $category->slug){ ?> 
+                          <span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
+                             <a class="hover_cat" href="<?php echo $urlsinparametros[0].'?&amp;query_type_color=or';?>">               
+                                <?= $categoria ?> 
+                                <span class="checked">
+                                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        <?php }else{ ?> 
+                          <span class="filter-color" style="background: <?php echo $color; ?>">&nbsp;</span>
+                             <a class="filter-a" href="<?php echo $urlsinparametros[0].'/?filter_color='.$category->slug;?>">
+                              <?= $categoria ?>              
+                             </a>
+                        <?php }  ?>                     
+                    </li> 
+        <?php } ?>                     
+                  <?php endforeach; ?>    
+    
           <div class="shop-sidebar__newsletter">
+          
 
-			  <?php echo do_shortcode('[formidable id=2]');  ?>
-		  </div>	
-		
+        <?php echo do_shortcode('[formidable id=2]');  ?>
+      </div>  
+    
     </div>
    </div>
   

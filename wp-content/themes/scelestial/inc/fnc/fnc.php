@@ -550,3 +550,36 @@ function woocommerce_order_itemmeta( $order_item_id, $meta_key ){
               return $value;
 
 }
+
+/************** Count product cat****************/
+ 
+function count_product_cat($cat,$cat_atri)
+{ $count = 0;
+        $args = 
+        array(
+          'post_type' => 'product',
+          'post_status' => 'publish',
+          'posts_per_page' => 99999,
+          'tax_query' => array(
+             'relation'=>'AND', // 'AND' 'OR' ...
+              array(
+                'taxonomy'        => 'pa_color',
+                'field'           => 'slug',
+                'terms'           => array($cat_atri),
+                'operator'        => 'IN',
+               ),
+             'relation'=>'AND', // 'AND' 'OR' ...
+              array(
+                'taxonomy'        => 'product_cat',
+                'field'           => 'slug',
+                'terms'           => array($cat),
+                'operator'        => 'IN',
+               )),              
+          );
+
+        $loop = new WP_Query( $args ); 
+        while ( $loop->have_posts() ) : $loop->the_post(); global $product;
+          $count = $count+1;
+        endwhile; 
+        return $count;    
+}  

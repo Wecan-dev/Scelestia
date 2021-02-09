@@ -96,7 +96,7 @@ if ( post_password_required() ) {
 	<?php endforeach; ?>
 </table>
 <section class="colecciones">
-			<h6>ACERCA DE</h6>
+		<!--	<h6>ACERCA DE</h6> -->
 			<h3 style="margin-bottom: 60px;">Productos Relacionados<br>
 			</h3>
 				<?php $args = array( 'post_type' => 'product', 'posts_per_page' => 6 ); ?>
@@ -134,3 +134,6 @@ if ( post_password_required() ) {
 		</section>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+<script type="text/javascript">
+$('.yith-wcwl-add-to-wishlist').appendTo('.enter_list');
+</script>

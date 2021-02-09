@@ -38,15 +38,12 @@ global $product;
 <!-- BROWSE WISHLIST MESSAGE -->
 <div class="yith-wcwl-wishlistexistsbrowse" data-product-id="<?php echo esc_attr( $product_id ); ?>" data-original-product-id="<?php echo esc_attr( $parent_product_id ); ?>">
 	<span class="feedback">
-		<?php //echo $icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<div class="icon-heart">					
-					  <i class="fa fa-heart" aria-hidden="true"></i>
-		</div>		
-		<?php //echo wp_kses_post( $already_in_wishslist_text ); ?>
-
+		<?php echo $icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		<?php echo wp_kses_post( $already_in_wishslist_text ); ?>
 	</span>
 	<a href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-title="<?php echo esc_attr( $browse_wishlist_text ); ?>">
+		<i class="fa fa-heart" aria-hidden="true"></i>
 		<?php echo ( ! $is_single && 'before_image' === $loop_position ) ? $icon : false; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<?php// echo wp_kses_post( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?>
+		<?php echo wp_kses_post( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?>
 	</a>
 </div>

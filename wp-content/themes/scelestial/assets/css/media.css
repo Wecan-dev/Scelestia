@@ -1,9 +1,108 @@
+@media (min-width: 320px) and (max-width: 767px){
+	
+	i.fa.fa-search{
+		    left: 22% !important;
+	}
+
+}
+@media (min-width: 375px) and (max-width: 767px){
+	i.fa.fa-search{
+		    left: 25% !important;
+	}
+		.flex-control-nav img {
+    height: 9rem !important;
+    width: 100px !important;
+}
+}
+@media (min-width: 425px) and (max-width: 767px){
+	i.fa.fa-search{
+		    left: 28% !important;
+	}
+	.flex-control-nav img {
+    height: 9rem !important;
+    width: 115px !important;
+}
+}
+
+
 @media (min-width: 0px) and (max-width: 767px) {
+	.show-results{
+margin-top: 100px;
+	}
+	.nav-trigger{
+    top: 95px;
+		    right: 5px;
+	}
+	#navigation > div{
+    padding-top: 45px;
+	}
+	.nav-container{
+    top: 88px;
+		    width: 100%;
+    background: white;
+	}
+	
+
+	.img-colecciones__home {
+    width: 100% !important;
+}
+	.woocommerce-ResetPassword {
+    width: 90%;
+}
+	.about_info1 h3{
+    line-height: 35px;
+	}
+	.img-corazon{
+		       width: 17px;
+    margin-left: -3px;
+    filter: invert(1);
+	}
+	.icono-carrito{
+		    width: 17px;
+    filter: invert(1);
+		margin-left: -5px;
+	}
+	.factura{
+		display:block;
+	}
+	section.container.orden{
+	    padding-left: 10px;
+    padding-right: 10px;
+	}
+	
+	.div2{
+    width: 100%;
+	}
+	.btn-oficialq{
+        padding: 10px 30px; 
+	}
+	.btn-oficialq a{
+		    font-size: 15px;
+	}
+	
+	.icono-secion{
+		    width: 30px;
+	}
+	.asesora-img{
+		padding-bottom: 60px;
+	}
+		.text-img p{
+		    font-size: 16px;
+		padding-left: 10px;
+    padding-right: 10px;
+	}
+	.register {
+    width: 100%;
+}
+
 	.payment_method_paypal img{
 		width:100%;
 	}
 	#order_review{
-		    display: none;
+		    
+	}
+	.product-name{
+    width: 100% !important;
 	}
 	.block2-overlay__colecciones{
     width: 100%;
@@ -332,6 +431,7 @@ width: 35%;
 
 .div{
 background-color: #00968861!important;
+	    height: 63vh;
 }
 
 .res-sec{
@@ -382,6 +482,7 @@ color: #fff;
 
 .btn-whatsapp .face{
 left: 1rem;
+	    margin-bottom: 15px
 }
 
 .btn-whatsapp .insta{
@@ -651,7 +752,7 @@ font-size: 15px;
 }
 
 .btn-oficial2{
-margin-top: 5%;
+margin-top: 5% !important;
 }
 
 .text-img {
@@ -993,10 +1094,12 @@ display: flex;
 margin-top: 10%;
 top: -3%;
 left: 5%;
+	flex-direction: inherit;
 }
 
 .flex-control-nav img {
-height: 4rem;
+height: 7rem;
+	    width: 85px;
 }
 
 h3, .h3 {
@@ -1085,8 +1188,40 @@ padding-top: 0;
 
 .woocommerce-billing-fields {
 margin-top: -10%;
+	    padding-left: 20px;
 }
-
+	.cart_item{
+		
+	}
+	.cart_totals .shop_table.shop_table_responsive{
+    width: 26vh;
+	}
+	.cart_item .product-name img{
+    width: 80px;
+    height: 85px;
+	}
+	.woocommerce table.shop_table td{
+	padding:0;
+	}
+	.section_title_container h3{
+		    font-size: 35px;
+	}
+	.select2-container--default .select2-selection--single .select2-selection__arrow{
+    right: 40px !important;
+	}
+	.image-product img {
+          width: 159% !important;
+    height: 274px !important;
+}
+	#informacion-de-contacto_field{
+		font-size:20px;
+	}
+	#tienes-una-cuenta_field{
+		font-size:20px;
+	}
+	.payment_method_paypal{
+    width: 85%;
+	}
 .finalizar-c {
 padding-top: 120px;
 }
@@ -1130,7 +1265,7 @@ width: 12px;
 height: 12px;
 position: absolute;
 top: 22%;
-left: 65%;
+    left: 28%;
 }
 
 .mask-blog h3{
@@ -1138,7 +1273,7 @@ font-size: 30px!important;
 }
 
 input[type="search"] {
-padding-left: 15px;
+padding-left: 33px;
 margin-left: 4%;
 }
 
@@ -1156,6 +1291,81 @@ margin-left: 4%;
 
 }
 @media (min-width: 767px) and (max-width: 991px){
+	.show-results{
+		    margin-top: 100px;
+	}
+	.nav-container{
+		    padding-top: 30px;
+    padding-left: 20px;
+		    top: 86px;
+		    background: white;
+	}
+	.nav-trigger{
+    top: 110px;
+    right: 10px;
+	}
+	#order_review{
+    margin-bottom: 20px;
+	}
+	.this-flex{
+display:block;
+	}
+	.woocommerce form .form-row input{
+width:100% !important;
+	}
+	form.checkout.woocommerce-checkout{
+		    padding-left: 20px;
+    padding-right: 20px;
+	}
+	.select2-container.select2-container--default .select2-selection--single{
+		width:100%;
+	}
+	.select2-container--default .select2-selection--single .select2-selection__arrow {
+    right: 10px !important;
+}
+	#customer_details > div.woocommerce-billing-fields > div.section_title_container.text-left{
+	    margin-top: 100px;
+	}
+	.yith-wcwl-add-button{
+		
+    right: -3%!important;
+	}
+	.flex-control-nav img {
+    height: 8rem !important;
+		width: 100%;
+}
+	.flex-control-nav{
+   left: 1% !important;
+    top: 103% !important;
+		    flex-direction: inherit !important;
+	}
+	.summary.entry-summary{
+		padding-left: 20px;
+	}
+			.img-colecciones__home {
+    width: 82% !important;
+}
+	.woocommerce-ResetPassword {
+    width: 90%;
+}
+	.page-numbers{
+		width:37% !important;
+	}
+	body > div.margin-top > div > div > div.blog-page > section > div.factura > div:nth-child(2){
+		    margin-left: 20px;
+	}
+	.info_factura{
+		    width: 225px;
+	}
+	.sec-option{
+		    width: 92% !important;
+	}
+	.slick-prev:hover, .slick-prev:focus, .slick-prev {
+    left: -15px !important;
+}
+	.slick-next:hover, .slick-next:focus, .slick-next{
+    right: -15px !important;
+	}
 	.block2-overlay__colecciones{
 		    width: 80%;
 	}
@@ -1223,8 +1433,45 @@ margin-left: 4%;
 		margin-left: 20px;
 	}
 }
-
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1199px){
+	.show-results{
+    margin-top: 100px;
+	}
+	.nav-trigger{
+    top: 100px;
+    right: 10px;
+	}
+	.nav-container{
+    top: 89px;
+		    padding-top: 25px;
+    padding-left: 20px;
+		    background: white;
+	}
+	.flex-control-nav img {
+    height: 10rem !important;
+    width: 100%;
+}
+	.flex-control-nav {
+    top: 104% !important;
+    left: 7% !important;
+    flex-direction: inherit;
+}
+	.yith-wcwl-add-button{
+		
+		    right: 2%!important;
+	}
+	#customer_details > div.woocommerce-billing-fields > div.section_title_container.text-left{
+    margin-top: 100px;
+	}
+	#order_review{
+    margin-top: 88px;
+	}
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+	
+	.page-numbers{
+		width: 82% !important;
+	}
 	.img-home__colecciones{
 		width: 100%;
     margin-left: 20px;
@@ -1234,7 +1481,7 @@ margin-left: 4%;
 		margin-left: 20px;
 	}
 	.cards-shop-flex{
-		grid-template-columns: 1fr 1fr !important;
+		grid-template-columns: 1fr 1fr 1fr;
     padding-left: 20px;
 	}
 		.woocommerce-cart-form{
@@ -1788,22 +2035,29 @@ color: #a2d2b1!important;
 	}
 .slider-nav.slick-initialized.slick-slider {
 width: 44%;
-top: -249px;
+    top: -330px;
 left: 151px;
 position: relative;
 }
+	body > header > div.container-menu-header-v2.p-t-26 > div.wrap_header > div.wrap_menu > nav > ul > li:nth-child(7) {
+    margin-left: 50px  ;
+    padding-left: 10px;
+}
+	.main_menu > li{
+		    padding-left: 30px;
+    padding-right: 8px;
+	}
 	
 }
+
+
 
 @media (min-width: 768px) and (max-height: 1366px) {
 
 	.fixed-header2 input {
     width: 225px!important;
 }
-	.main_menu > li {
-    padding-left: 10px;
-    padding-right: 8px;
-}
+	
 	/*.asesora-img img {
     height: 385px;
     margin-top: 150px;
@@ -1815,7 +2069,7 @@ position: relative;
 }*/
 	
 	.topbar-child2 {
-		right: 5%;}
+		right: 1%;}
 		.text-banner h1{
 			font-size:50px;
 		}
@@ -2694,6 +2948,7 @@ display: flex;
 margin-top: 10%;
 top: -3%;
 left: 5%;
+	
 }
 
 .flex-control-nav img {
@@ -2857,6 +3112,9 @@ margin-left: 4%;
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
+		.img-colecciones__home {
+    width: 82% !important;
+}
 
 .team h3 {
 
@@ -4950,9 +5208,15 @@ color: #a2d2b1!important;
 	
 
 @media (min-width: 768px) and (max-width: 1366px) {
+	.modal-content{
+		    height: max-content;
+	}
+	.page-numbers{
+		    width: 68%;
+	}
 .topbar-child2 {
 
-      right: 47px;
+      right: 0px;
 }
 	
 
@@ -5179,7 +5443,8 @@ i.fa.fa-search {
 
 .img-about5 {
   position: absolute;
-    bottom: -185%;
+    
+    bottom: -170%;
     left: 8%;
     }
 
@@ -5202,9 +5467,14 @@ i.fa.fa-search {
     padding-right: 4px;
 }
 }
-@media only (max-width: 1920px) and (min-height: 1080px) {
+@media  (min-width: 1920px) and (max-height: 1080px) {
 .nav-img img {
     height: 225px;
 }
+	.main_menu > li{
+		 padding-left: 30px ;
+    padding-right: 8px;
+	}
+
 	
 }

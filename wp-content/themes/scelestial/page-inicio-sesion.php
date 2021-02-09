@@ -31,13 +31,13 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php endif; ?>
 <?php if ($_GET["create"] != 'account') { ?>
-<section class="registro">
+<section class="registro-compradores">
 	<div class="register_form container">
 
-			<div class="title_register">
-				<i class="fa fa-user-circle-o" style="color:#a0d1af; margin-bottom: 10%; font-size: 25px;" aria-hidden="true"></i>
+			<div class="title_register--compradores">
+				<img class="icono-iniciar" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/icon@3x.png">
 
-				<h4><span style="color: #000; font-weight: bold;">Iniciar Sesión</span> <br> Compradores</h4>
+				<h4><span style="color: #000; font-weight: bold;">Iniciar sesión</span> <br> Compradores</h4>
 			</div>	
 		<!--<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>-->
 
@@ -47,7 +47,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 			<!--<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">-->
 				<!--<label for="username"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>-->
-				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" placeholder="Correo Electrónico" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+				<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" placeholder="Correo electrónico" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
 			<!--</p>-->
 			<!--<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">-->
 				<!--<label for="password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>-->
@@ -76,7 +76,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 
 		</form>
-		<a href="?create=account"><p style="font-weight: bold; ">Crear una cuenta nueva <i style="color: #000" class="fa fa-angle-right" aria-hidden="true"></i></p></a>
+		<a href="?create=account"><p style="font-weight: 500; ">Crear una cuenta nueva <i style="color: #000" class="fa fa-angle-right" aria-hidden="true"></i></p></a>
 	</div>
 </section>		
 <?php } ?>		
@@ -85,17 +85,17 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 	</div>
 <?php if ($_GET["create"] == 'account') { ?>
-<section class="register2">
+<section class="registro-compradores">
 	<div class="register_form container">
 
 			<div class="title_register">
-				<i class="fa fa-user-circle-o" style="color:#a0d1af; margin-bottom: 10%;" aria-hidden="true"></i>
+				<img class="icono-iniciar" src="http://159.89.229.55/Scelestia/wp-content/uploads/2021/01/icon@3x.png">
 
 				<h4><span style="color: #000; font-weight: bold;">Registro de</span> <br> Compradores</h4>
 			</div>
            <?php echo do_shortcode('[user_registration_form id="114"]');  ?>
 		
-			<a href="?create"><p style="font-weight: bold; ">De regreso a iniciar sesión <i style="color: #000" class="fa fa-angle-right" aria-hidden="true"></i></p></a>
+			<a href="?create"><p style="font-weight: 500; ">De regreso a iniciar sesión <i style="color: #000" class="fa fa-angle-right" aria-hidden="true"></i></p></a>
 	</div>
 </section>	
 

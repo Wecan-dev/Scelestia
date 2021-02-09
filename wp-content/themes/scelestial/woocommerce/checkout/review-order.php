@@ -43,6 +43,7 @@ defined( 'ABSPATH' ) || exit;
 
 				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 					<td class="product-name">
+						
 					  <?php echo $_product->get_image();?>
 					</td>
 					<td class="product-name">
@@ -58,12 +59,14 @@ defined( 'ABSPATH' ) || exit;
 				</tr>
 				<?php
 			   }else{ ?>
-
+		
+                 
 				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 					<td class="product-name image-product">
 					  <?php echo $_product->get_image();?>
 					</td>
 			    </tr>
+		
 			    <tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">		
 					<td class="product-name">
 						<strong><?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong><br>

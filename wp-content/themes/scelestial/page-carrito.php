@@ -20,7 +20,7 @@
 
   <div class=" cart">
    <section class="colecciones">
-      <h6>ACERCA DE</h6>
+   <!--   <h6>ACERCA DE</h6> -->
       <h3>Carrito de Compras<br>
       </h3>
   	<?php echo do_shortcode('[woocommerce_cart]'); ?>
