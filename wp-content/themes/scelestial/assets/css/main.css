@@ -5171,7 +5171,7 @@ font-family: 'Bodoni SvtyTwo ITC TT';
 .text1-img {
 display: flex;
 align-items: center;
-
+position:relative;
 justify-content: space-around;
 margin-bottom: 6%;
 }
@@ -5180,7 +5180,9 @@ margin-bottom: 6%;
 width: 50%;
 text-align: inherit;
 }
-
+body > section.about2 > div.text1-img.about{
+	    margin-bottom: 0%;
+}
 
 .about_info1 h6{
 height: 15px;
@@ -5758,8 +5760,7 @@ i.fa.fa-map-marker {
 
 .img-about3 {
  position: absolute;
-    top: 32%;
-    left: 6%;
+    top: 100px;
 }
 
 .rose1{
@@ -5772,8 +5773,9 @@ i.fa.fa-map-marker {
 
 .img-about4{
     position: absolute;
-        bottom: -51%;
-    right: 7%;
+bottom: 160px;
+    right: 123px;
+
 }
 
 .img-about4 img{
@@ -5791,8 +5793,8 @@ i.fa.fa-map-marker {
 
 .img-about5{
     position: absolute;
-    bottom: -112%;
-    left: 8%;
+       bottom: 40px;
+      left: 9%;
 }
 
 .img-about5 img{
@@ -7388,4 +7390,17 @@ display:none;
     background: white;
 	
 }
+body > section.about2 > div.text1-img.about > div.img-about3 > img{
+	    width: 25%;
+}
+body > section.about2 > div.text1-img.bck{
+	
+    padding-bottom: 100px;
 
+}
+body > section.about2 > div:nth-child(3) > div.green2 > img{
+	margin-top: 150px;
+}
+body > section.about2 > div.text1-img.bck > div.img-about2 > div.rose1 > img{
+	    margin-top: 175px;
+}

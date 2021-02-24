@@ -2028,7 +2028,33 @@ color: #a2d2b1!important;
 }
 
 }
+@media (min-width: 900px) and (max-width: 1440px){
+	body > section.about2 > div.text1-img.about{
+	    margin-bottom: 0%;
+}
+body > section.about2 > div.text1-img.about > div.img-about3{
+	    left: 126px;
+}
+body > section.about2 > div.text1-img.bck > div.img-about2 > div.rose1 > img{
+	    margin-top: 215px;
+}
+body > section.about2 > div.text1-img.bck > div.img-about2 > div.img-about4{
+	    bottom: 160px;
+	    right: 106px;
+}
+body > section.about2 > div.text1-img.bck{
+	    padding-bottom: 100px;
+}
+body > section.about2 > div:nth-child(3) > div.green2 > img{
+	margin-top: 160px;
+}
+.img-about5{
+	    bottom: 40px;
+	    left: 8%;
+}
 
+
+} 
 @media (min-width: 900px) and (max-height: 1440px) {
 	.woocommerce-cart-form{
 		    width: 75%;
